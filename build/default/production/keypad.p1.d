@@ -1,0 +1,9 @@
+build/default/production/keypad.p1:  \
+keypad.c  \
+mcc_generated_files/mcc.h  \
+mcc_generated_files/device_config.h  \
+mcc_generated_files/pin_manager.h  \
+mcc_generated_files/interrupt_manager.h  \
+mcc_generated_files/ext_int.h  \
+mcc_generated_files/adc.h  \
+keypad.h 
