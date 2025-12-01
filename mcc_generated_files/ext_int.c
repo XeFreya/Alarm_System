@@ -26,9 +26,7 @@
  */
 #include <xc.h>
 #include "ext_int.h"
-#include "pin_manager.h"
-#include "../Alarm_Status.h"
-
+extern volatile uint8_t g_zona_alarma;
 
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);
@@ -45,8 +43,11 @@ void INT0_ISR(void)
 
 void INT0_CallBack(void)
 {
-    // Add your custom callback code here
-     g_intrusion_flag = 1;
+    // Lógica directa para la Puerta Principal
+    if (g_zona_alarma == 0) 
+    {
+        g_zona_alarma = 1; // Zona 1 = Puerta Principal
+    }
 }
 
 void INT0_SetInterruptHandler(void (* InterruptHandler)(void)){
@@ -68,8 +69,11 @@ void INT1_ISR(void)
 
 void INT1_CallBack(void)
 {
-    // Add your custom callback code here
-    LED_ALARMA_Toggle();
+     // Lógica directa para la Puerta Trasera
+    if (g_zona_alarma == 0) 
+    {
+        g_zona_alarma = 2; // Zona 2 = Puerta Trasera
+    }
 }
 
 void INT1_SetInterruptHandler(void (* InterruptHandler)(void)){

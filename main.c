@@ -57,70 +57,61 @@
 #include <string.h> // Para memset
     
 void main(void) {
-    // --- INICIALIZACIÓN ---
     SYSTEM_Initialize();
+
+    // --- ARREGLO DE HARDWARE ---
+    INTCON2bits.nRBPU = 0; // Habilita la "llave general" de Pull-Ups
+    WPUB = 0xFF;
     
     // Habilitar Interrupciones y Pull-ups
     INTCON2bits.nRBPU = 0; 
     INTCONbits.GIE = 1;   
     INTCONbits.PEIE = 1;  
     
-    // Asegurar Teclado Digital (PORTD) y ADC (RA0)
-    ANSELD = 0x00;        
-    ANSELAbits.ANSA0 = 1; 
-    
+ 
 
     LCD_Init();
     
-    // Mensaje inicial (Estado DESARMADO por defecto)
+    // Inicio
     LCD_Clear();
     LCD_SetCursor(0,0);
     LCD_SendString("Sistema DESARMADO");
     LCD_SetCursor(1,0);
     LCD_SendString("Presione A");
 
-    // --- BUCLE INFINITO ---
     while (1) {
         
-        // 1. MÁQUINA DE ESTADOS
-        // Ejecuta la función correspondiente al estado actual
+        // 1. Ejecutar Lógica de Estados
         switch (g_estado_actual) {
-            case DISARMED:
-                alarm_disarmed();
-                break;
-                
-            case FIN_SCREEN:
-                show_pin_screen();
-                break;
-                
-            case ARMED:
-                armed_alarm();
-                break;
-                
-            case INTRUSION:
-                alert_alarm();
-                break;
+            case DISARMED:   alarm_disarmed();  break;
+            case FIN_SCREEN: show_pin_screen(); break;
+            case ARMED:      armed_alarm();     break;
+            case INTRUSION:  alert_alarm();     break;
         }
 
-        // 2. REVISIÓN DE INTERRUPCIÓN (SENSOR)
-        // Esto tiene prioridad sobre todo lo demás
-        if (g_intrusion_flag == 1) {
-            g_intrusion_flag = 0; // Bajar la bandera
+        if (g_zona_alarma > 0) { 
             
-            // Solo si estamos armados pasamos a intrusión
             if (g_estado_actual == ARMED) {
-                LCD_Clear();
-                LCD_SetCursor(0,0);
-                LCD_SendString("!! INTRUSION !!");
-                
-                // Reseteamos buffer para permitir meter PIN
-                g_pin_index = 0;
-                memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
-                
-                g_estado_actual = INTRUSION;
+                 
+                 // --- ¡AGREGA ESTAS 3 LÍNEAS AQUÍ! ---
+                 // Borramos cualquier rastro del PIN anterior
+                 // para que la alarma no se desactive sola.
+                 g_pin_index = 0;
+                 memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+                 // -------------------------------------
+
+                 mostrar_zona_alarma(); 
+                 g_estado_actual = INTRUSION;
+            } 
+            
+            else if (g_estado_actual == INTRUSION) {
+                // No hacer nada
+            }
+            else {
+                 g_zona_alarma = 0; 
             }
         }
         
-        __delay_ms(20); // Pequeña pausa para estabilidad
+        __delay_ms(20); 
     }
 }

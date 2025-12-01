@@ -31,13 +31,14 @@ typedef enum {
 extern SistemaEstado_t g_estado_actual;
 extern char g_pin_buffer[5];
 extern uint8_t g_pin_index;
-extern volatile uint8_t g_intrusion_flag;
+extern volatile uint8_t g_zona_alarma;
 
 // --- 4. Prototipos de Funciones (Tus funciones) ---
 void alarm_disarmed(void);
 void show_pin_screen(void);
 void armed_alarm(void);
 void alert_alarm(void);
+void mostrar_zona_alarma(void);
 
 #ifdef	__cplusplus
 }

@@ -9668,10 +9668,42 @@ unsigned char __t3rd16on(void);
 # 1 "mcc_generated_files/device_config.h" 1
 # 51 "mcc_generated_files/mcc.h" 2
 # 1 "mcc_generated_files/pin_manager.h" 1
-# 304 "mcc_generated_files/pin_manager.h"
+# 366 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 316 "mcc_generated_files/pin_manager.h"
+# 378 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 391 "mcc_generated_files/pin_manager.h"
+void IOCB4_ISR(void);
+# 414 "mcc_generated_files/pin_manager.h"
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 438 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB4_InterruptHandler)(void);
+# 462 "mcc_generated_files/pin_manager.h"
+void IOCB4_DefaultInterruptHandler(void);
+# 475 "mcc_generated_files/pin_manager.h"
+void IOCB5_ISR(void);
+# 498 "mcc_generated_files/pin_manager.h"
+void IOCB5_SetInterruptHandler(void (* InterruptHandler)(void));
+# 522 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB5_InterruptHandler)(void);
+# 546 "mcc_generated_files/pin_manager.h"
+void IOCB5_DefaultInterruptHandler(void);
+# 559 "mcc_generated_files/pin_manager.h"
+void IOCB6_ISR(void);
+# 582 "mcc_generated_files/pin_manager.h"
+void IOCB6_SetInterruptHandler(void (* InterruptHandler)(void));
+# 606 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB6_InterruptHandler)(void);
+# 630 "mcc_generated_files/pin_manager.h"
+void IOCB6_DefaultInterruptHandler(void);
+# 643 "mcc_generated_files/pin_manager.h"
+void IOCB7_ISR(void);
+# 666 "mcc_generated_files/pin_manager.h"
+void IOCB7_SetInterruptHandler(void (* InterruptHandler)(void));
+# 690 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB7_InterruptHandler)(void);
+# 714 "mcc_generated_files/pin_manager.h"
+void IOCB7_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/mcc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include\\c99/stdbool.h" 1 3

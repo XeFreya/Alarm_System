@@ -2,10 +2,10 @@
 #include "lcd_i2c.h"
 #include "keypad.h"
 #include <string.h>
-
-#include <string.h>
-#include "Alarm_Status.h"
+#include "ADC.h"
+#include <stdio.h>
 #include "mcc_generated_files/pin_manager.h"
+#include "mcc_generated_files/adc.h"
 
 #define _XTAL_FREQ 8000000
 
@@ -13,7 +13,7 @@
 SistemaEstado_t g_estado_actual = DISARMED;
 char g_pin_buffer[5];
 uint8_t g_pin_index = 0;
-volatile uint8_t g_intrusion_flag = 0;
+volatile uint8_t g_zona_alarma = 0;
 
 // Variables locales estáticas para lectura de teclas
 static char tecla = '\0';
@@ -23,22 +23,42 @@ static char tecla_ant = '\0';
 // 1. ESTADO DESARMADO
 // ------------------------------------------------------
 void alarm_disarmed(void) {
-    // Aquí solo esperamos la tecla 'A' para armar
     
+    // 1. Lectura del Sensor de Temperatura (LM35)
+    // ---------------------------------------------
+    // Leemos el valor crudo del ADC (0 a 1023)
+    adc_result_t valor_adc = ADC_GetConversion(channel_AN0);
+    
+    // Convertimos a voltaje y luego a grados Celsius
+    // (5.0V * 1000mV) / 1023 bits = 4.88 mV por bit
+    // LM35 entrega 10mV por grado.
+    // Formula simplificada: (ADC * 500) / 1023
+    uint16_t temperatura = (uint16_t)((valor_adc * 500) / 1023);
+    
+    // Preparamos el texto para el LCD
+    char buffer_temp[16];
+    sprintf(buffer_temp, "Temp: %d C   ", temperatura); // Espacios extra para limpiar
+    
+    // Mostramos en la línea 2 (dejando la línea 1 con "Sistema DESARMADO")
+    LCD_SetCursor(1, 0);
+    LCD_SendString(buffer_temp);
+    // ---------------------------------------------
+
+
+    // 2. Lógica del Teclado (La que ya tenías)
     tecla = KPD_GetKey();
 
     if (tecla != '\0' && tecla_ant == '\0') {
         if (tecla == TECLA_ARMAR) {
-            // Transición: Vamos a pedir el PIN
+            
+            // Limpiamos pantalla antes de irnos
             LCD_Clear();
             LCD_SetCursor(0,0);
             LCD_SendString("Introduzca PIN:");
             
-            // Reseteamos el buffer del PIN antes de cambiar de estado
             g_pin_index = 0;
             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
             
-            // CAMBIO DE ESTADO
             g_estado_actual = FIN_SCREEN;
         }
     }
@@ -57,8 +77,8 @@ void show_pin_screen(void) {
         // Si es número
         if (g_pin_index < 4 && (tecla >= '0' && tecla <= '9')) {
             g_pin_buffer[g_pin_index] = tecla;
-            LCD_SetCursor(1, g_pin_index); // Mueve cursor
-            LCD_SendChar('*');             // Pone asterisco
+            LCD_SetCursor(1, g_pin_index); 
+            LCD_SendChar('*');             
             g_pin_index++;
         }
         
@@ -83,13 +103,19 @@ void show_pin_screen(void) {
             LCD_SetCursor(0,0);
             LCD_SendString("Sistema ARMADO");
             
+            // --- ¡¡ESTAS SON LAS LÍNEAS QUE FALTABAN!! ---
+            // Borramos el PIN de la memoria INMEDIATAMENTE
+            g_pin_index = 0;
+            memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+            // ---------------------------------------------
+            
             g_estado_actual = ARMED;
         } else {
             // --- PIN INCORRECTO -> REGRESAR A DESARMADO ---
             LCD_Clear();
             LCD_SetCursor(0,0);
             LCD_SendString("PIN Incorrecto");
-            __delay_ms(1500); // Pequeña pausa para leer el mensaje
+            __delay_ms(1500); 
             
             // Restaurar pantalla de desarmado
             LCD_Clear();
@@ -158,5 +184,24 @@ void alert_alarm(void) {
             LCD_SendString("!! INTRUSION !!"); 
             // (Regresa al inicio de la función alert_alarm en el sig ciclo)
         }
+    }
+}
+
+void mostrar_zona_alarma(void) {
+    LCD_Clear();
+    LCD_SetCursor(0, 0);
+    LCD_SendString("!! INTRUSION !!");
+    
+    LCD_SetCursor(1, 0);
+    
+    // Revisamos qué número tiene la variable
+    switch (g_zona_alarma) {
+        case 1: LCD_SendString("P. PRINCIPAL"); break; // INT0
+        case 2: LCD_SendString("P. TRASERA");   break; // INT1
+        case 3: LCD_SendString("VENTANA 1");    break; // RB4
+        case 4: LCD_SendString("VENTANA 2");    break; // RB5
+        case 5: LCD_SendString("VENTANA 3");    break; // RB6
+        case 6: LCD_SendString("VENTANA 4");    break; // RB7
+        default: LCD_SendString("ZONA DESCONOC."); break;
     }
 }

@@ -123,6 +123,68 @@
 #define RB2_SetAnalogMode()         do { ANSELBbits.ANSB2 = 1; } while(0)
 #define RB2_SetDigitalMode()        do { ANSELBbits.ANSB2 = 0; } while(0)
 
+// get/set Ventana1 aliases
+#define Ventana1_TRIS                 TRISBbits.TRISB4
+#define Ventana1_LAT                  LATBbits.LATB4
+#define Ventana1_PORT                 PORTBbits.RB4
+#define Ventana1_WPU                  WPUBbits.WPUB4
+#define Ventana1_ANS                  ANSELBbits.ANSB4
+#define Ventana1_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
+#define Ventana1_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
+#define Ventana1_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
+#define Ventana1_GetValue()           PORTBbits.RB4
+#define Ventana1_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
+#define Ventana1_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
+#define Ventana1_SetPullup()          do { WPUBbits.WPUB4 = 1; } while(0)
+#define Ventana1_ResetPullup()        do { WPUBbits.WPUB4 = 0; } while(0)
+#define Ventana1_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
+#define Ventana1_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
+
+// get/set Ventana2 aliases
+#define Ventana2_TRIS                 TRISBbits.TRISB5
+#define Ventana2_LAT                  LATBbits.LATB5
+#define Ventana2_PORT                 PORTBbits.RB5
+#define Ventana2_WPU                  WPUBbits.WPUB5
+#define Ventana2_ANS                  ANSELBbits.ANSB5
+#define Ventana2_SetHigh()            do { LATBbits.LATB5 = 1; } while(0)
+#define Ventana2_SetLow()             do { LATBbits.LATB5 = 0; } while(0)
+#define Ventana2_Toggle()             do { LATBbits.LATB5 = ~LATBbits.LATB5; } while(0)
+#define Ventana2_GetValue()           PORTBbits.RB5
+#define Ventana2_SetDigitalInput()    do { TRISBbits.TRISB5 = 1; } while(0)
+#define Ventana2_SetDigitalOutput()   do { TRISBbits.TRISB5 = 0; } while(0)
+#define Ventana2_SetPullup()          do { WPUBbits.WPUB5 = 1; } while(0)
+#define Ventana2_ResetPullup()        do { WPUBbits.WPUB5 = 0; } while(0)
+#define Ventana2_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
+#define Ventana2_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
+
+// get/set Ventana3 aliases
+#define Ventana3_TRIS                 TRISBbits.TRISB6
+#define Ventana3_LAT                  LATBbits.LATB6
+#define Ventana3_PORT                 PORTBbits.RB6
+#define Ventana3_WPU                  WPUBbits.WPUB6
+#define Ventana3_SetHigh()            do { LATBbits.LATB6 = 1; } while(0)
+#define Ventana3_SetLow()             do { LATBbits.LATB6 = 0; } while(0)
+#define Ventana3_Toggle()             do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0)
+#define Ventana3_GetValue()           PORTBbits.RB6
+#define Ventana3_SetDigitalInput()    do { TRISBbits.TRISB6 = 1; } while(0)
+#define Ventana3_SetDigitalOutput()   do { TRISBbits.TRISB6 = 0; } while(0)
+#define Ventana3_SetPullup()          do { WPUBbits.WPUB6 = 1; } while(0)
+#define Ventana3_ResetPullup()        do { WPUBbits.WPUB6 = 0; } while(0)
+
+// get/set Ventana4 aliases
+#define Ventana4_TRIS                 TRISBbits.TRISB7
+#define Ventana4_LAT                  LATBbits.LATB7
+#define Ventana4_PORT                 PORTBbits.RB7
+#define Ventana4_WPU                  WPUBbits.WPUB7
+#define Ventana4_SetHigh()            do { LATBbits.LATB7 = 1; } while(0)
+#define Ventana4_SetLow()             do { LATBbits.LATB7 = 0; } while(0)
+#define Ventana4_Toggle()             do { LATBbits.LATB7 = ~LATBbits.LATB7; } while(0)
+#define Ventana4_GetValue()           PORTBbits.RB7
+#define Ventana4_SetDigitalInput()    do { TRISBbits.TRISB7 = 1; } while(0)
+#define Ventana4_SetDigitalOutput()   do { TRISBbits.TRISB7 = 0; } while(0)
+#define Ventana4_SetPullup()          do { WPUBbits.WPUB7 = 1; } while(0)
+#define Ventana4_ResetPullup()        do { WPUBbits.WPUB7 = 0; } while(0)
+
 // get/set SCL aliases
 #define SCL_TRIS                 TRISCbits.TRISC3
 #define SCL_LAT                  LATCbits.LATC3
@@ -314,6 +376,342 @@ void PIN_MANAGER_Initialize (void);
     PIN_MANAGER_IOC();
  */
 void PIN_MANAGER_IOC(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCB4 pin functionality
+ * @Example
+    IOCB4_ISR();
+ */
+void IOCB4_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCB4 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCB4 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB4_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCB4 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCB4_SetInterruptHandler() method.
+    This handler is called every time the IOCB4 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB4_SetInterruptHandler(IOCB4_InterruptHandler);
+
+*/
+extern void (*IOCB4_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCB4 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCB4_SetInterruptHandler() method.
+    This handler is called every time the IOCB4 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB4_SetInterruptHandler(IOCB4_DefaultInterruptHandler);
+
+*/
+void IOCB4_DefaultInterruptHandler(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCB5 pin functionality
+ * @Example
+    IOCB5_ISR();
+ */
+void IOCB5_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCB5 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCB5 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB5_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCB5_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCB5 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCB5_SetInterruptHandler() method.
+    This handler is called every time the IOCB5 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB5_SetInterruptHandler(IOCB5_InterruptHandler);
+
+*/
+extern void (*IOCB5_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCB5 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCB5_SetInterruptHandler() method.
+    This handler is called every time the IOCB5 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB5_SetInterruptHandler(IOCB5_DefaultInterruptHandler);
+
+*/
+void IOCB5_DefaultInterruptHandler(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCB6 pin functionality
+ * @Example
+    IOCB6_ISR();
+ */
+void IOCB6_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCB6 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCB6 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB6_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCB6_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCB6 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCB6_SetInterruptHandler() method.
+    This handler is called every time the IOCB6 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB6_SetInterruptHandler(IOCB6_InterruptHandler);
+
+*/
+extern void (*IOCB6_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCB6 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCB6_SetInterruptHandler() method.
+    This handler is called every time the IOCB6 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB6_SetInterruptHandler(IOCB6_DefaultInterruptHandler);
+
+*/
+void IOCB6_DefaultInterruptHandler(void);
+
+
+/**
+ * @Param
+    none
+ * @Returns
+    none
+ * @Description
+    Interrupt on Change Handler for the IOCB7 pin functionality
+ * @Example
+    IOCB7_ISR();
+ */
+void IOCB7_ISR(void);
+
+/**
+  @Summary
+    Interrupt Handler Setter for IOCB7 pin interrupt-on-change functionality
+
+  @Description
+    Allows selecting an interrupt handler for IOCB7 at application runtime
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    InterruptHandler function pointer.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB7_SetInterruptHandler(MyInterruptHandler);
+
+*/
+void IOCB7_SetInterruptHandler(void (* InterruptHandler)(void));
+
+/**
+  @Summary
+    Dynamic Interrupt Handler for IOCB7 pin
+
+  @Description
+    This is a dynamic interrupt handler to be used together with the IOCB7_SetInterruptHandler() method.
+    This handler is called every time the IOCB7 ISR is executed and allows any function to be registered at runtime.
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB7_SetInterruptHandler(IOCB7_InterruptHandler);
+
+*/
+extern void (*IOCB7_InterruptHandler)(void);
+
+/**
+  @Summary
+    Default Interrupt Handler for IOCB7 pin
+
+  @Description
+    This is a predefined interrupt handler to be used together with the IOCB7_SetInterruptHandler() method.
+    This handler is called every time the IOCB7 ISR is executed. 
+    
+  @Preconditions
+    Pin Manager intializer called
+
+  @Returns
+    None.
+
+  @Param
+    None.
+
+  @Example
+    PIN_MANAGER_Initialize();
+    IOCB7_SetInterruptHandler(IOCB7_DefaultInterruptHandler);
+
+*/
+void IOCB7_DefaultInterruptHandler(void);
 
 
 

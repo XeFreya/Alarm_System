@@ -22,6 +22,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16881
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 16881: extern volatile INTCON2bits_t INTCON2bits __attribute__((address(0xFF1)));
 [v _INTCON2bits `VS821 ~T0 @X0 0 e@4081 ]
+"2719
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 2719: extern volatile unsigned char WPUB __attribute__((address(0xF61)));
+[v _WPUB `Vuc ~T0 @X0 0 e@3937 ]
 "16932
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 16932:     struct {
 [s S826 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -41,20 +44,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16958
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 16958: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS825 ~T0 @X0 0 e@4082 ]
-"198
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 198: extern volatile unsigned char ANSELD __attribute__((address(0xF3B)));
-[v _ANSELD `Vuc ~T0 @X0 0 e@3899 ]
-"58
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 58:     struct {
-[s S7 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S7 . ANSA0 ANSA1 ANSA2 ANSA3 . ANSA5 ]
-"57
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 57: typedef union {
-[u S6 `S7 1 ]
-[n S6 . . ]
-"67
-[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 67: extern volatile ANSELAbits_t ANSELAbits __attribute__((address(0xF38)));
-[v _ANSELAbits `VS6 ~T0 @X0 0 e@3896 ]
 "16 ./lcd_i2c.h
 [; ;./lcd_i2c.h: 16: void LCD_Init(void);
 [v _LCD_Init `(v ~T0 @X0 0 ef ]
@@ -79,16 +68,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "40
 [; ;./Alarm_Status.h: 40: void alert_alarm(void);
 [v _alert_alarm `(v ~T0 @X0 0 ef ]
-"103 main.c
-[; ;main.c: 103:         }
-[c E6406 0 1 2 3 .. ]
-[n E6406 . DISARMED FIN_SCREEN ARMED INTRUSION  ]
+"90 main.c
+[; ;main.c: 90:         }
+[c E6438 0 1 2 3 .. ]
+[n E6438 . DISARMED FIN_SCREEN ARMED INTRUSION  ]
 "31 ./Alarm_Status.h
 [; ;./Alarm_Status.h: 31: extern SistemaEstado_t g_estado_actual;
-[v _g_estado_actual `E6406 ~T0 @X0 0 e ]
+[v _g_estado_actual `E6438 ~T0 @X0 0 e ]
 "34
-[; ;./Alarm_Status.h: 34: extern volatile uint8_t g_intrusion_flag;
-[v _g_intrusion_flag `Vuc ~T0 @X0 0 e ]
+[; ;./Alarm_Status.h: 34: extern volatile uint8_t g_zona_alarma;
+[v _g_zona_alarma `Vuc ~T0 @X0 0 e ]
 "33
 [; ;./Alarm_Status.h: 33: extern uint8_t g_pin_index;
 [v _g_pin_index `uc ~T0 @X0 0 e ]
@@ -98,6 +87,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32 ./Alarm_Status.h
 [; ;./Alarm_Status.h: 32: extern char g_pin_buffer[5];
 [v _g_pin_buffer `uc ~T0 @X0 -> 0 `x e ]
+"41
+[; ;./Alarm_Status.h: 41: void mostrar_zona_alarma(void);
+[v _mostrar_zona_alarma `(v ~T0 @X0 0 ef ]
 [v F205 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
 [v __delay `JF205 ~T0 @X0 0 e ]
@@ -868,24 +860,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _main ]
 [f ]
-"61
-[; ;main.c: 61:     SYSTEM_Initialize();
+"60
+[; ;main.c: 60:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"64
-[; ;main.c: 64:     INTCON2bits.nRBPU = 0;
+"63
+[; ;main.c: 63:     INTCON2bits.nRBPU = 0;
 [e = . . _INTCON2bits 1 7 -> -> 0 `i `uc ]
-"65
-[; ;main.c: 65:     INTCONbits.GIE = 1;
+"64
+[; ;main.c: 64:     WPUB = 0xFF;
+[e = _WPUB -> -> 255 `i `uc ]
+"67
+[; ;main.c: 67:     INTCON2bits.nRBPU = 0;
+[e = . . _INTCON2bits 1 7 -> -> 0 `i `uc ]
+"68
+[; ;main.c: 68:     INTCONbits.GIE = 1;
 [e = . . _INTCONbits 1 7 -> -> 1 `i `uc ]
-"66
-[; ;main.c: 66:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "69
-[; ;main.c: 69:     ANSELD = 0x00;
-[e = _ANSELD -> -> 0 `i `uc ]
-"70
-[; ;main.c: 70:     ANSELAbits.ANSA0 = 1;
-[e = . . _ANSELAbits 0 0 -> -> 1 `i `uc ]
+[; ;main.c: 69:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 1 6 -> -> 1 `i `uc ]
 "73
 [; ;main.c: 73:     LCD_Init();
 [e ( _LCD_Init ..  ]
@@ -904,111 +896,106 @@ Version 4.0 HI-TECH Software Intermediate Code
 "80
 [; ;main.c: 80:     LCD_SendString("Presione A");
 [e ( _LCD_SendString (1 :s 2C ]
-"83
-[; ;main.c: 83:     while (1) {
+"82
+[; ;main.c: 82:     while (1) {
 [e :U 860 ]
 {
-"87
-[; ;main.c: 87:         switch (g_estado_actual) {
+"85
+[; ;main.c: 85:         switch (g_estado_actual) {
 [e $U 863  ]
 {
-"88
-[; ;main.c: 88:             case DISARMED:
+"86
+[; ;main.c: 86:             case DISARMED: alarm_disarmed(); break;
 [e :U 864 ]
-"89
-[; ;main.c: 89:                 alarm_disarmed();
 [e ( _alarm_disarmed ..  ]
-"90
-[; ;main.c: 90:                 break;
 [e $U 862  ]
-"92
-[; ;main.c: 92:             case FIN_SCREEN:
+"87
+[; ;main.c: 87:             case FIN_SCREEN: show_pin_screen(); break;
 [e :U 865 ]
-"93
-[; ;main.c: 93:                 show_pin_screen();
 [e ( _show_pin_screen ..  ]
-"94
-[; ;main.c: 94:                 break;
 [e $U 862  ]
-"96
-[; ;main.c: 96:             case ARMED:
+"88
+[; ;main.c: 88:             case ARMED: armed_alarm(); break;
 [e :U 866 ]
-"97
-[; ;main.c: 97:                 armed_alarm();
 [e ( _armed_alarm ..  ]
-"98
-[; ;main.c: 98:                 break;
 [e $U 862  ]
-"100
-[; ;main.c: 100:             case INTRUSION:
+"89
+[; ;main.c: 89:             case INTRUSION: alert_alarm(); break;
 [e :U 867 ]
-"101
-[; ;main.c: 101:                 alert_alarm();
 [e ( _alert_alarm ..  ]
-"102
-[; ;main.c: 102:                 break;
 [e $U 862  ]
-"103
-[; ;main.c: 103:         }
+"90
+[; ;main.c: 90:         }
 }
 [e $U 862  ]
 [e :U 863 ]
-[e [\ -> _g_estado_actual `ui , $ -> . `E6406 0 `ui 864
- , $ -> . `E6406 1 `ui 865
- , $ -> . `E6406 2 `ui 866
- , $ -> . `E6406 3 `ui 867
+[e [\ -> _g_estado_actual `ui , $ -> . `E6438 0 `ui 864
+ , $ -> . `E6438 1 `ui 865
+ , $ -> . `E6438 2 `ui 866
+ , $ -> . `E6438 3 `ui 867
  862 ]
 [e :U 862 ]
-"107
-[; ;main.c: 107:         if (g_intrusion_flag == 1) {
-[e $ ! == -> _g_intrusion_flag `i -> 1 `i 868  ]
+"92
+[; ;main.c: 92:         if (g_zona_alarma > 0) {
+[e $ ! > -> _g_zona_alarma `i -> 0 `i 868  ]
 {
-"108
-[; ;main.c: 108:             g_intrusion_flag = 0;
-[e = _g_intrusion_flag -> -> 0 `i `uc ]
-"111
-[; ;main.c: 111:             if (g_estado_actual == ARMED) {
-[e $ ! == -> _g_estado_actual `ui -> . `E6406 2 `ui 869  ]
+"94
+[; ;main.c: 94:             if (g_estado_actual == ARMED) {
+[e $ ! == -> _g_estado_actual `ui -> . `E6438 2 `ui 869  ]
 {
-"112
-[; ;main.c: 112:                 LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"113
-[; ;main.c: 113:                 LCD_SetCursor(0,0);
-[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"114
-[; ;main.c: 114:                 LCD_SendString("!! INTRUSION !!");
-[e ( _LCD_SendString (1 :s 3C ]
-"117
-[; ;main.c: 117:                 g_pin_index = 0;
+"99
+[; ;main.c: 99:                  g_pin_index = 0;
 [e = _g_pin_index -> -> 0 `i `uc ]
-"118
-[; ;main.c: 118:                 memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+"100
+[; ;main.c: 100:                  memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
 [e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> * -> 5 `i # `uc `ui ]
-"120
-[; ;main.c: 120:                 g_estado_actual = INTRUSION;
-[e = _g_estado_actual . `E6406 3 ]
-"121
-[; ;main.c: 121:             }
+"103
+[; ;main.c: 103:                  mostrar_zona_alarma();
+[e ( _mostrar_zona_alarma ..  ]
+"104
+[; ;main.c: 104:                  g_estado_actual = INTRUSION;
+[e = _g_estado_actual . `E6438 3 ]
+"105
+[; ;main.c: 105:             }
 }
+[e $U 870  ]
+"107
+[; ;main.c: 107:             else if (g_estado_actual == INTRUSION) {
 [e :U 869 ]
-"122
-[; ;main.c: 122:         }
+[e $ ! == -> _g_estado_actual `ui -> . `E6438 3 `ui 871  ]
+{
+"109
+[; ;main.c: 109:             }
+}
+[e $U 872  ]
+"110
+[; ;main.c: 110:             else {
+[e :U 871 ]
+{
+"111
+[; ;main.c: 111:                  g_zona_alarma = 0;
+[e = _g_zona_alarma -> -> 0 `i `uc ]
+"112
+[; ;main.c: 112:             }
+}
+[e :U 872 ]
+[e :U 870 ]
+"113
+[; ;main.c: 113:         }
 }
 [e :U 868 ]
-"124
-[; ;main.c: 124:         _delay((unsigned long)((20)*(8000000/4000.0)));
+"115
+[; ;main.c: 115:         _delay((unsigned long)((20)*(8000000/4000.0)));
 [e ( __delay (1 -> * -> -> 20 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"125
-[; ;main.c: 125:     }
+"116
+[; ;main.c: 116:     }
 }
 [e :U 859 ]
 [e $U 860  ]
 [e :U 861 ]
-"126
-[; ;main.c: 126: }
+"117
+[; ;main.c: 117: }
 [e :UE 858 ]
 }
 [a 1C 83 105 115 116 101 109 97 32 68 69 83 65 82 77 65 68 79 0 ]
 [a 2C 80 114 101 115 105 111 110 101 32 65 0 ]
-[a 3C 33 33 32 73 78 84 82 85 83 73 79 78 32 33 33 0 ]

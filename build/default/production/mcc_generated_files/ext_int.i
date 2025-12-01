@@ -9697,39 +9697,7 @@ extern void (*INT2_InterruptHandler)(void);
 # 905 "mcc_generated_files/ext_int.h"
 void INT2_DefaultInterruptHandler(void);
 # 29 "mcc_generated_files/ext_int.c" 2
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 304 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 316 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 30 "mcc_generated_files/ext_int.c" 2
-# 1 "mcc_generated_files/../Alarm_Status.h" 1
-# 18 "mcc_generated_files/../Alarm_Status.h"
-typedef enum {
-    DISARMED,
-    FIN_SCREEN,
-    ARMED,
-    INTRUSION
-} SistemaEstado_t;
-
-
-
-
-
-
-
-extern SistemaEstado_t g_estado_actual;
-extern char g_pin_buffer[5];
-extern uint8_t g_pin_index;
-extern volatile uint8_t g_intrusion_flag;
-
-
-void alarm_disarmed(void);
-void show_pin_screen(void);
-void armed_alarm(void);
-void alert_alarm(void);
-# 31 "mcc_generated_files/ext_int.c" 2
-
+extern volatile uint8_t g_zona_alarma;
 
 void (*INT0_InterruptHandler)(void);
 void (*INT1_InterruptHandler)(void);
@@ -9747,7 +9715,10 @@ void INT0_ISR(void)
 void INT0_CallBack(void)
 {
 
-     g_intrusion_flag = 1;
+    if (g_zona_alarma == 0)
+    {
+        g_zona_alarma = 1;
+    }
 }
 
 void INT0_SetInterruptHandler(void (* InterruptHandler)(void)){
@@ -9770,7 +9741,10 @@ void INT1_ISR(void)
 void INT1_CallBack(void)
 {
 
-    do { LATEbits.LATE0 = ~LATEbits.LATE0; } while(0);
+    if (g_zona_alarma == 0)
+    {
+        g_zona_alarma = 2;
+    }
 }
 
 void INT1_SetInterruptHandler(void (* InterruptHandler)(void)){

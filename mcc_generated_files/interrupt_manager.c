@@ -55,24 +55,42 @@ void  INTERRUPT_Initialize (void)
     RCONbits.IPEN = 0;
 }
 
-void __interrupt() INTERRUPT_InterruptManager (void)
+// Referencia a la variable global
+extern volatile uint8_t g_zona_alarma; 
+
+void __interrupt() INTERRUPT_InterruptManager(void)
 {
-    // interrupt handler
+    // 1. PUERTA PRINCIPAL (INT0)
     if(INTCONbits.INT0IE == 1 && INTCONbits.INT0IF == 1)
     {
-        INT0_ISR();
+        if (g_zona_alarma == 0) g_zona_alarma = 1;
+        INTCONbits.INT0IF = 0; 
     }
-    else if(INTCON3bits.INT1IE == 1 && INTCON3bits.INT1IF == 1)
+
+    // 2. PUERTA TRASERA (INT1)
+    if(INTCON3bits.INT1IE == 1 && INTCON3bits.INT1IF == 1)
     {
-        INT1_ISR();
+        if (g_zona_alarma == 0) g_zona_alarma = 2;
+        INTCON3bits.INT1IF = 0; 
     }
-    else if(INTCON3bits.INT2IE == 1 && INTCON3bits.INT2IF == 1)
+
+    // 3. VENTANAS (Con protección 'else if')
+    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
     {
-        INT2_ISR();
-    }
-    else
-    {
-        //Unhandled Interrupt
+        if (g_zona_alarma == 0) {
+            
+            // Revisamos en orden. Al usar 'else if', si la Ventana 1 se activa,
+            // el código DEJA DE REVISAR las demás. 
+            // Esto evita que la Ventana 4 sobrescriba el resultado.
+            
+            if      (LATBbits.LB4 == 0) g_zona_alarma = 3; // Ventana 1
+            if (LATBbits.LB5 == 0) g_zona_alarma = 4; // Ventana 2
+            if (LATBbits.LB6 == 0) g_zona_alarma = 5; // Ventana 3
+            if (LATBbits.LB7 == 0) g_zona_alarma = 6; // Ventana 4
+        }
+        
+        uint8_t dummy = PORTB; 
+        INTCONbits.RBIF = 0; 
     }
 }
 /**

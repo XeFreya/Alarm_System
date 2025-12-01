@@ -55,9 +55,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16958
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 16958: extern volatile INTCONbits_t INTCONbits __attribute__((address(0xFF2)));
 [v _INTCONbits `VS825 ~T0 @X0 0 e@4082 ]
-"584 mcc_generated_files/ext_int.h
-[; ;mcc_generated_files/ext_int.h: 584: void INT0_ISR(void);
-[v _INT0_ISR `(v ~T0 @X0 0 ef ]
+"59 mcc_generated_files/interrupt_manager.c
+[; ;mcc_generated_files/interrupt_manager.c: 59: extern volatile uint8_t g_zona_alarma;
+[v _g_zona_alarma `Vuc ~T0 @X0 0 e ]
 "16770 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 16770:     struct {
 [s S819 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -73,12 +73,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16791
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 16791: extern volatile INTCON3bits_t INTCON3bits __attribute__((address(0xFF0)));
 [v _INTCON3bits `VS818 ~T0 @X0 0 e@4080 ]
-"697 mcc_generated_files/ext_int.h
-[; ;mcc_generated_files/ext_int.h: 697: void INT1_ISR(void);
-[v _INT1_ISR `(v ~T0 @X0 0 ef ]
-"810
-[; ;mcc_generated_files/ext_int.h: 810: void INT2_ISR(void);
-[v _INT2_ISR `(v ~T0 @X0 0 ef ]
+"7678
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 7678:     struct {
+[s S383 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S383 . LATB0 LATB1 LATB2 LATB3 LATB4 LATB5 LATB6 LATB7 ]
+"7688
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 7688:     struct {
+[s S384 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S384 . LB0 LB1 LB2 LB3 LB4 LB5 LB6 LB7 ]
+"7677
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 7677: typedef union {
+[u S382 `S383 1 `S384 1 ]
+[n S382 . . . ]
+"7699
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 7699: extern volatile LATBbits_t LATBbits __attribute__((address(0xF8A)));
+[v _LATBbits `VS382 ~T0 @X0 0 e@3978 ]
+"6565
+[; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 6565: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
+[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -854,68 +866,96 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 857 ]
 }
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+"61
+[; ;mcc_generated_files/interrupt_manager.c: 61: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager(void)
 [v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59: {
+"62
+[; ;mcc_generated_files/interrupt_manager.c: 62: {
 {
 [e :U _INTERRUPT_InterruptManager ]
 [f ]
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:     if(INTCONbits.INT0IE == 1 && INTCONbits.INT0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 4 `i -> 1 `i == -> . . _INTCONbits 0 1 `i -> 1 `i 859  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:     {
-{
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63:         INT0_ISR();
-[e ( _INT0_ISR ..  ]
 "64
-[; ;mcc_generated_files/interrupt_manager.c: 64:     }
-}
-[e $U 860  ]
+[; ;mcc_generated_files/interrupt_manager.c: 64:     if(INTCONbits.INT0IE == 1 && INTCONbits.INT0IF == 1)
+[e $ ! && == -> . . _INTCONbits 0 4 `i -> 1 `i == -> . . _INTCONbits 0 1 `i -> 1 `i 859  ]
 "65
-[; ;mcc_generated_files/interrupt_manager.c: 65:     else if(INTCON3bits.INT1IE == 1 && INTCON3bits.INT1IF == 1)
-[e :U 859 ]
-[e $ ! && == -> . . _INTCON3bits 0 3 `i -> 1 `i == -> . . _INTCON3bits 0 0 `i -> 1 `i 861  ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:     {
+[; ;mcc_generated_files/interrupt_manager.c: 65:     {
 {
+"66
+[; ;mcc_generated_files/interrupt_manager.c: 66:         if (g_zona_alarma == 0) g_zona_alarma = 1;
+[e $ ! == -> _g_zona_alarma `i -> 0 `i 860  ]
+[e = _g_zona_alarma -> -> 1 `i `uc ]
+[e :U 860 ]
 "67
-[; ;mcc_generated_files/interrupt_manager.c: 67:         INT1_ISR();
-[e ( _INT1_ISR ..  ]
+[; ;mcc_generated_files/interrupt_manager.c: 67:         INTCONbits.INT0IF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "68
 [; ;mcc_generated_files/interrupt_manager.c: 68:     }
 }
-[e $U 862  ]
-"69
-[; ;mcc_generated_files/interrupt_manager.c: 69:     else if(INTCON3bits.INT2IE == 1 && INTCON3bits.INT2IF == 1)
-[e :U 861 ]
-[e $ ! && == -> . . _INTCON3bits 0 4 `i -> 1 `i == -> . . _INTCON3bits 0 1 `i -> 1 `i 863  ]
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:     {
-{
+[e :U 859 ]
 "71
-[; ;mcc_generated_files/interrupt_manager.c: 71:         INT2_ISR();
-[e ( _INT2_ISR ..  ]
+[; ;mcc_generated_files/interrupt_manager.c: 71:     if(INTCON3bits.INT1IE == 1 && INTCON3bits.INT1IF == 1)
+[e $ ! && == -> . . _INTCON3bits 0 3 `i -> 1 `i == -> . . _INTCON3bits 0 0 `i -> 1 `i 861  ]
 "72
-[; ;mcc_generated_files/interrupt_manager.c: 72:     }
-}
-[e $U 864  ]
-"73
-[; ;mcc_generated_files/interrupt_manager.c: 73:     else
-[e :U 863 ]
-"74
-[; ;mcc_generated_files/interrupt_manager.c: 74:     {
+[; ;mcc_generated_files/interrupt_manager.c: 72:     {
 {
-"76
-[; ;mcc_generated_files/interrupt_manager.c: 76:     }
+"73
+[; ;mcc_generated_files/interrupt_manager.c: 73:         if (g_zona_alarma == 0) g_zona_alarma = 2;
+[e $ ! == -> _g_zona_alarma `i -> 0 `i 862  ]
+[e = _g_zona_alarma -> -> 2 `i `uc ]
+[e :U 862 ]
+"74
+[; ;mcc_generated_files/interrupt_manager.c: 74:         INTCON3bits.INT1IF = 0;
+[e = . . _INTCON3bits 0 0 -> -> 0 `i `uc ]
+"75
+[; ;mcc_generated_files/interrupt_manager.c: 75:     }
+}
+[e :U 861 ]
+"78
+[; ;mcc_generated_files/interrupt_manager.c: 78:     if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
+[e $ ! && == -> . . _INTCONbits 0 3 `i -> 1 `i == -> . . _INTCONbits 0 0 `i -> 1 `i 863  ]
+"79
+[; ;mcc_generated_files/interrupt_manager.c: 79:     {
+{
+"80
+[; ;mcc_generated_files/interrupt_manager.c: 80:         if (g_zona_alarma == 0) {
+[e $ ! == -> _g_zona_alarma `i -> 0 `i 864  ]
+{
+"86
+[; ;mcc_generated_files/interrupt_manager.c: 86:             if (LATBbits.LB4 == 0) g_zona_alarma = 3;
+[e $ ! == -> . . _LATBbits 1 4 `i -> 0 `i 865  ]
+[e = _g_zona_alarma -> -> 3 `i `uc ]
+[e :U 865 ]
+"87
+[; ;mcc_generated_files/interrupt_manager.c: 87:             if (LATBbits.LB5 == 0) g_zona_alarma = 4;
+[e $ ! == -> . . _LATBbits 1 5 `i -> 0 `i 866  ]
+[e = _g_zona_alarma -> -> 4 `i `uc ]
+[e :U 866 ]
+"88
+[; ;mcc_generated_files/interrupt_manager.c: 88:             if (LATBbits.LB6 == 0) g_zona_alarma = 5;
+[e $ ! == -> . . _LATBbits 1 6 `i -> 0 `i 867  ]
+[e = _g_zona_alarma -> -> 5 `i `uc ]
+[e :U 867 ]
+"89
+[; ;mcc_generated_files/interrupt_manager.c: 89:             if (LATBbits.LB7 == 0) g_zona_alarma = 6;
+[e $ ! == -> . . _LATBbits 1 7 `i -> 0 `i 868  ]
+[e = _g_zona_alarma -> -> 6 `i `uc ]
+[e :U 868 ]
+"90
+[; ;mcc_generated_files/interrupt_manager.c: 90:         }
 }
 [e :U 864 ]
-[e :U 862 ]
-[e :U 860 ]
-"77
-[; ;mcc_generated_files/interrupt_manager.c: 77: }
+"92
+[; ;mcc_generated_files/interrupt_manager.c: 92:         uint8_t dummy = PORTB;
+[v _dummy `uc ~T0 @X0 1 a ]
+[e = _dummy _PORTB ]
+"93
+[; ;mcc_generated_files/interrupt_manager.c: 93:         INTCONbits.RBIF = 0;
+[e = . . _INTCONbits 0 0 -> -> 0 `i `uc ]
+"94
+[; ;mcc_generated_files/interrupt_manager.c: 94:     }
+}
+[e :U 863 ]
+"95
+[; ;mcc_generated_files/interrupt_manager.c: 95: }
 [e :UE 858 ]
 }

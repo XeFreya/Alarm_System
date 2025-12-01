@@ -3,18 +3,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Alarm_Status.c: 13: SistemaEstado_t g_estado_actual = DISARMED;
 [c E36 0 1 2 3 .. ]
 [n E36 . DISARMED FIN_SCREEN ARMED INTRUSION  ]
+"30
+[; ;Alarm_Status.c: 30:     adc_result_t valor_adc = ADC_GetConversion(channel_AN0);
+[c E6574 0 29 30 31 .. ]
+[n E6574 . channel_AN0 channel_CTMU channel_DAC channel_FVRBuf2  ]
+"288 ./mcc_generated_files/adc.h
+[; ;./mcc_generated_files/adc.h: 288: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[v _ADC_GetConversion `(us ~T0 @X0 0 ef1`E6574 ]
+"121 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdio.h
+[; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/stdio.h: 121: int sprintf(char *restrict, const char *restrict, ...);
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
+"28 ./lcd_i2c.h
+[; ;./lcd_i2c.h: 28: void LCD_SetCursor(uint8_t row, uint8_t col);
+[v _LCD_SetCursor `(v ~T0 @X0 0 ef2`uc`uc ]
+"40
+[; ;./lcd_i2c.h: 40: void LCD_SendString(char *str);
+[v _LCD_SendString `(v ~T0 @X0 0 ef1`*uc ]
 "15 ./keypad.h
 [; ;./keypad.h: 15:     char KPD_GetKey(void);
 [v _KPD_GetKey `(uc ~T0 @X0 0 ef ]
 "21 ./lcd_i2c.h
 [; ;./lcd_i2c.h: 21: void LCD_Clear(void);
 [v _LCD_Clear `(v ~T0 @X0 0 ef ]
-"28
-[; ;./lcd_i2c.h: 28: void LCD_SetCursor(uint8_t row, uint8_t col);
-[v _LCD_SetCursor `(v ~T0 @X0 0 ef2`uc`uc ]
-"40
-[; ;./lcd_i2c.h: 40: void LCD_SendString(char *str);
-[v _LCD_SendString `(v ~T0 @X0 0 ef1`*uc ]
 "29 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
 [; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h: 29: void *memset (void *, int, size_t);
 [v _memset `(*v ~T0 @X0 0 ef3`*v`i`ui ]
@@ -24,25 +34,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h
 [; ;C:\Program Files\Microchip\xc8\v3.00\pic\include\c99/string.h: 39: int strcmp (const char *, const char *);
 [v _strcmp `(i ~T0 @X0 0 ef2`*Cuc`*Cuc ]
-[v F398 `(v ~T0 @X0 1 tf1`ul ]
+[v F722 `(v ~T0 @X0 1 tf1`ul ]
 "20 C:\Program Files\Microchip\xc8\v3.00\pic\include/builtins.h
-[v __delay `JF398 ~T0 @X0 0 e ]
+[v __delay `JF722 ~T0 @X0 0 e ]
 [p i __delay ]
 "8014 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 8014:     struct {
-[s S393 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S393 . LATE0 LATE1 LATE2 ]
+[s S395 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S395 . LATE0 LATE1 LATE2 ]
 "8019
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 8019:     struct {
-[s S394 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S394 . LE0 LE1 LE2 ]
+[s S396 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S396 . LE0 LE1 LE2 ]
 "8013
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 8013: typedef union {
-[u S392 `S393 1 `S394 1 ]
-[n S392 . . . ]
+[u S394 `S395 1 `S396 1 ]
+[n S394 . . . ]
 "8025
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 8025: extern volatile LATEbits_t LATEbits __attribute__((address(0xF8D)));
-[v _LATEbits `VS392 ~T0 @X0 0 e@3981 ]
+[v _LATEbits `VS394 ~T0 @X0 0 e@3981 ]
 "54 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 54: __asm("ANSELA equ 0F38h");
 [; <" ANSELA equ 0F38h ;# ">
@@ -818,9 +828,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "16
-[; ;Alarm_Status.c: 16: volatile uint8_t g_intrusion_flag = 0;
-[v _g_intrusion_flag `Vuc ~T0 @X0 1 e ]
-[i _g_intrusion_flag
+[; ;Alarm_Status.c: 16: volatile uint8_t g_zona_alarma = 0;
+[v _g_zona_alarma `Vuc ~T0 @X0 1 e ]
+[i _g_zona_alarma
 -> -> 0 `i `uc
 ]
 "19
@@ -841,142 +851,113 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _alarm_disarmed ]
 [f ]
-"28
-[; ;Alarm_Status.c: 28:     tecla = KPD_GetKey();
-[e = _tecla ( _KPD_GetKey ..  ]
 "30
-[; ;Alarm_Status.c: 30:     if (tecla != '\0' && tecla_ant == '\0') {
-[e $ ! && != -> _tecla `ui -> 0 `ui == -> _tecla_ant `ui -> 0 `ui 856  ]
-{
-"31
-[; ;Alarm_Status.c: 31:         if (tecla == 'A') {
-[e $ ! == -> _tecla `ui -> 65 `ui 857  ]
-{
-"33
-[; ;Alarm_Status.c: 33:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"34
-[; ;Alarm_Status.c: 34:             LCD_SetCursor(0,0);
-[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"35
-[; ;Alarm_Status.c: 35:             LCD_SendString("Introduzca PIN:");
-[e ( _LCD_SendString (1 :s 1C ]
-"38
-[; ;Alarm_Status.c: 38:             g_pin_index = 0;
-[e = _g_pin_index -> -> 0 `i `uc ]
+[; ;Alarm_Status.c: 30:     adc_result_t valor_adc = ADC_GetConversion(channel_AN0);
+[v _valor_adc `us ~T0 @X0 1 a ]
+[e = _valor_adc ( _ADC_GetConversion (1 . `E6574 0 ]
+"36
+[; ;Alarm_Status.c: 36:     uint16_t temperatura = (uint16_t)((valor_adc * 500) / 1023);
+[v _temperatura `us ~T0 @X0 1 a ]
+[e = _temperatura -> / * -> _valor_adc `ui -> -> 500 `i `ui -> -> 1023 `i `ui `us ]
 "39
-[; ;Alarm_Status.c: 39:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
-[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
-"42
-[; ;Alarm_Status.c: 42:             g_estado_actual = FIN_SCREEN;
-[e = _g_estado_actual . `E36 1 ]
+[; ;Alarm_Status.c: 39:     char buffer_temp[16];
+[v _buffer_temp `uc ~T0 @X0 -> 16 `i a ]
+"40
+[; ;Alarm_Status.c: 40:     sprintf(buffer_temp, "Temp: %d C   ", temperatura);
+[e ( _sprintf (1 , (. , &U _buffer_temp :s 1C -> _temperatura `ui ]
 "43
-[; ;Alarm_Status.c: 43:         }
-}
-[e :U 857 ]
+[; ;Alarm_Status.c: 43:     LCD_SetCursor(1, 0);
+[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
 "44
-[; ;Alarm_Status.c: 44:     }
-}
-[e :U 856 ]
-"45
-[; ;Alarm_Status.c: 45:     tecla_ant = tecla;
-[e = _tecla_ant _tecla ]
-"46
-[; ;Alarm_Status.c: 46: }
-[e :UE 855 ]
-}
-"51
-[; ;Alarm_Status.c: 51: void show_pin_screen(void) {
-[v _show_pin_screen `(v ~T0 @X0 1 ef ]
-{
-[e :U _show_pin_screen ]
-[f ]
-"53
-[; ;Alarm_Status.c: 53:     tecla = KPD_GetKey();
+[; ;Alarm_Status.c: 44:     LCD_SendString(buffer_temp);
+[e ( _LCD_SendString (1 &U _buffer_temp ]
+"49
+[; ;Alarm_Status.c: 49:     tecla = KPD_GetKey();
 [e = _tecla ( _KPD_GetKey ..  ]
-"55
-[; ;Alarm_Status.c: 55:     if (tecla != '\0' && tecla_ant == '\0') {
+"51
+[; ;Alarm_Status.c: 51:     if (tecla != '\0' && tecla_ant == '\0') {
 [e $ ! && != -> _tecla `ui -> 0 `ui == -> _tecla_ant `ui -> 0 `ui 859  ]
 {
-"58
-[; ;Alarm_Status.c: 58:         if (g_pin_index < 4 && (tecla >= '0' && tecla <= '9')) {
-[e $ ! && < -> _g_pin_index `i -> 4 `i && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 860  ]
+"52
+[; ;Alarm_Status.c: 52:         if (tecla == 'A') {
+[e $ ! == -> _tecla `ui -> 65 `ui 860  ]
 {
+"55
+[; ;Alarm_Status.c: 55:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"56
+[; ;Alarm_Status.c: 56:             LCD_SetCursor(0,0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"57
+[; ;Alarm_Status.c: 57:             LCD_SendString("Introduzca PIN:");
+[e ( _LCD_SendString (1 :s 2C ]
 "59
-[; ;Alarm_Status.c: 59:             g_pin_buffer[g_pin_index] = tecla;
-[e = *U + &U _g_pin_buffer * -> _g_pin_index `ux -> -> # *U &U _g_pin_buffer `ui `ux _tecla ]
+[; ;Alarm_Status.c: 59:             g_pin_index = 0;
+[e = _g_pin_index -> -> 0 `i `uc ]
 "60
-[; ;Alarm_Status.c: 60:             LCD_SetCursor(1, g_pin_index);
-[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc _g_pin_index ]
-"61
-[; ;Alarm_Status.c: 61:             LCD_SendChar('*');
-[e ( _LCD_SendChar (1 -> -> 42 `ui `uc ]
+[; ;Alarm_Status.c: 60:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
 "62
-[; ;Alarm_Status.c: 62:             g_pin_index++;
-[e ++ _g_pin_index -> -> 1 `i `uc ]
+[; ;Alarm_Status.c: 62:             g_estado_actual = FIN_SCREEN;
+[e = _g_estado_actual . `E36 1 ]
 "63
 [; ;Alarm_Status.c: 63:         }
 }
 [e :U 860 ]
-"66
-[; ;Alarm_Status.c: 66:         if (tecla == '*') {
-[e $ ! == -> _tecla `ui -> 42 `ui 861  ]
-{
-"67
-[; ;Alarm_Status.c: 67:             g_pin_index = 0;
-[e = _g_pin_index -> -> 0 `i `uc ]
-"68
-[; ;Alarm_Status.c: 68:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
-[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
-"69
-[; ;Alarm_Status.c: 69:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"70
-[; ;Alarm_Status.c: 70:             LCD_SetCursor(0,0);
-[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"71
-[; ;Alarm_Status.c: 71:             LCD_SendString("Introduzca PIN:");
-[e ( _LCD_SendString (1 :s 2C ]
-"72
-[; ;Alarm_Status.c: 72:         }
-}
-[e :U 861 ]
-"73
-[; ;Alarm_Status.c: 73:     }
+"64
+[; ;Alarm_Status.c: 64:     }
 }
 [e :U 859 ]
-"74
-[; ;Alarm_Status.c: 74:     tecla_ant = tecla;
+"65
+[; ;Alarm_Status.c: 65:     tecla_ant = tecla;
 [e = _tecla_ant _tecla ]
-"77
-[; ;Alarm_Status.c: 77:     if (g_pin_index == 4) {
-[e $ ! == -> _g_pin_index `i -> 4 `i 862  ]
+"66
+[; ;Alarm_Status.c: 66: }
+[e :UE 858 ]
+}
+"71
+[; ;Alarm_Status.c: 71: void show_pin_screen(void) {
+[v _show_pin_screen `(v ~T0 @X0 1 ef ]
+{
+[e :U _show_pin_screen ]
+[f ]
+"73
+[; ;Alarm_Status.c: 73:     tecla = KPD_GetKey();
+[e = _tecla ( _KPD_GetKey ..  ]
+"75
+[; ;Alarm_Status.c: 75:     if (tecla != '\0' && tecla_ant == '\0') {
+[e $ ! && != -> _tecla `ui -> 0 `ui == -> _tecla_ant `ui -> 0 `ui 862  ]
 {
 "78
-[; ;Alarm_Status.c: 78:         g_pin_buffer[4] = '\0';
-[e = *U + &U _g_pin_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _g_pin_buffer `ui `ux -> -> 0 `ui `uc ]
+[; ;Alarm_Status.c: 78:         if (g_pin_index < 4 && (tecla >= '0' && tecla <= '9')) {
+[e $ ! && < -> _g_pin_index `i -> 4 `i && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 863  ]
+{
+"79
+[; ;Alarm_Status.c: 79:             g_pin_buffer[g_pin_index] = tecla;
+[e = *U + &U _g_pin_buffer * -> _g_pin_index `ux -> -> # *U &U _g_pin_buffer `ui `ux _tecla ]
 "80
-[; ;Alarm_Status.c: 80:         if (strcmp(g_pin_buffer, "1234") == 0) {
-[e $ ! == ( _strcmp (2 , -> &U _g_pin_buffer `*Cuc :s 3C -> 0 `i 863  ]
-{
+[; ;Alarm_Status.c: 80:             LCD_SetCursor(1, g_pin_index);
+[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc _g_pin_index ]
+"81
+[; ;Alarm_Status.c: 81:             LCD_SendChar('*');
+[e ( _LCD_SendChar (1 -> -> 42 `ui `uc ]
 "82
-[; ;Alarm_Status.c: 82:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
+[; ;Alarm_Status.c: 82:             g_pin_index++;
+[e ++ _g_pin_index -> -> 1 `i `uc ]
 "83
-[; ;Alarm_Status.c: 83:             LCD_SetCursor(0,0);
-[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"84
-[; ;Alarm_Status.c: 84:             LCD_SendString("Sistema ARMADO");
-[e ( _LCD_SendString (1 :s 4C ]
-"86
-[; ;Alarm_Status.c: 86:             g_estado_actual = ARMED;
-[e = _g_estado_actual . `E36 2 ]
-"87
-[; ;Alarm_Status.c: 87:         } else {
+[; ;Alarm_Status.c: 83:         }
 }
-[e $U 864  ]
 [e :U 863 ]
+"86
+[; ;Alarm_Status.c: 86:         if (tecla == '*') {
+[e $ ! == -> _tecla `ui -> 42 `ui 864  ]
 {
+"87
+[; ;Alarm_Status.c: 87:             g_pin_index = 0;
+[e = _g_pin_index -> -> 0 `i `uc ]
+"88
+[; ;Alarm_Status.c: 88:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
 "89
 [; ;Alarm_Status.c: 89:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
@@ -984,189 +965,328 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;Alarm_Status.c: 90:             LCD_SetCursor(0,0);
 [e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "91
-[; ;Alarm_Status.c: 91:             LCD_SendString("PIN Incorrecto");
-[e ( _LCD_SendString (1 :s 5C ]
+[; ;Alarm_Status.c: 91:             LCD_SendString("Introduzca PIN:");
+[e ( _LCD_SendString (1 :s 3C ]
 "92
-[; ;Alarm_Status.c: 92:             _delay((unsigned long)((1500)*(8000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
-"95
-[; ;Alarm_Status.c: 95:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"96
-[; ;Alarm_Status.c: 96:             LCD_SetCursor(0,0);
-[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"97
-[; ;Alarm_Status.c: 97:             LCD_SendString("Sistema DESARMADO");
-[e ( _LCD_SendString (1 :s 6C ]
-"98
-[; ;Alarm_Status.c: 98:             LCD_SetCursor(1,0);
-[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"99
-[; ;Alarm_Status.c: 99:             LCD_SendString("Presione A");
-[e ( _LCD_SendString (1 :s 7C ]
-"101
-[; ;Alarm_Status.c: 101:             g_estado_actual = DISARMED;
-[e = _g_estado_actual . `E36 0 ]
-"102
-[; ;Alarm_Status.c: 102:         }
+[; ;Alarm_Status.c: 92:         }
 }
 [e :U 864 ]
-"103
-[; ;Alarm_Status.c: 103:     }
+"93
+[; ;Alarm_Status.c: 93:     }
 }
 [e :U 862 ]
+"94
+[; ;Alarm_Status.c: 94:     tecla_ant = tecla;
+[e = _tecla_ant _tecla ]
+"97
+[; ;Alarm_Status.c: 97:     if (g_pin_index == 4) {
+[e $ ! == -> _g_pin_index `i -> 4 `i 865  ]
+{
+"98
+[; ;Alarm_Status.c: 98:         g_pin_buffer[4] = '\0';
+[e = *U + &U _g_pin_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _g_pin_buffer `ui `ux -> -> 0 `ui `uc ]
+"100
+[; ;Alarm_Status.c: 100:         if (strcmp(g_pin_buffer, "1234") == 0) {
+[e $ ! == ( _strcmp (2 , -> &U _g_pin_buffer `*Cuc :s 4C -> 0 `i 866  ]
+{
+"102
+[; ;Alarm_Status.c: 102:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"103
+[; ;Alarm_Status.c: 103:             LCD_SetCursor(0,0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
 "104
-[; ;Alarm_Status.c: 104: }
-[e :UE 858 ]
-}
+[; ;Alarm_Status.c: 104:             LCD_SendString("Sistema ARMADO");
+[e ( _LCD_SendString (1 :s 5C ]
+"108
+[; ;Alarm_Status.c: 108:             g_pin_index = 0;
+[e = _g_pin_index -> -> 0 `i `uc ]
 "109
-[; ;Alarm_Status.c: 109: void armed_alarm(void) {
+[; ;Alarm_Status.c: 109:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
+"112
+[; ;Alarm_Status.c: 112:             g_estado_actual = ARMED;
+[e = _g_estado_actual . `E36 2 ]
+"113
+[; ;Alarm_Status.c: 113:         } else {
+}
+[e $U 867  ]
+[e :U 866 ]
+{
+"115
+[; ;Alarm_Status.c: 115:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"116
+[; ;Alarm_Status.c: 116:             LCD_SetCursor(0,0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"117
+[; ;Alarm_Status.c: 117:             LCD_SendString("PIN Incorrecto");
+[e ( _LCD_SendString (1 :s 6C ]
+"118
+[; ;Alarm_Status.c: 118:             _delay((unsigned long)((1500)*(8000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 8000000 `l `d .4000.0 `ul ]
+"121
+[; ;Alarm_Status.c: 121:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"122
+[; ;Alarm_Status.c: 122:             LCD_SetCursor(0,0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"123
+[; ;Alarm_Status.c: 123:             LCD_SendString("Sistema DESARMADO");
+[e ( _LCD_SendString (1 :s 7C ]
+"124
+[; ;Alarm_Status.c: 124:             LCD_SetCursor(1,0);
+[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"125
+[; ;Alarm_Status.c: 125:             LCD_SendString("Presione A");
+[e ( _LCD_SendString (1 :s 8C ]
+"127
+[; ;Alarm_Status.c: 127:             g_estado_actual = DISARMED;
+[e = _g_estado_actual . `E36 0 ]
+"128
+[; ;Alarm_Status.c: 128:         }
+}
+[e :U 867 ]
+"129
+[; ;Alarm_Status.c: 129:     }
+}
+[e :U 865 ]
+"130
+[; ;Alarm_Status.c: 130: }
+[e :UE 861 ]
+}
+"135
+[; ;Alarm_Status.c: 135: void armed_alarm(void) {
 [v _armed_alarm `(v ~T0 @X0 1 ef ]
 {
 [e :U _armed_alarm ]
 [f ]
-"113
-[; ;Alarm_Status.c: 113: }
-[e :UE 865 ]
+"139
+[; ;Alarm_Status.c: 139: }
+[e :UE 868 ]
 }
-"118
-[; ;Alarm_Status.c: 118: void alert_alarm(void) {
+"144
+[; ;Alarm_Status.c: 144: void alert_alarm(void) {
 [v _alert_alarm `(v ~T0 @X0 1 ef ]
 {
 [e :U _alert_alarm ]
 [f ]
-"120
-[; ;Alarm_Status.c: 120:     do { LATEbits.LATE0 = 1; } while(0);
-[e :U 869 ]
+"146
+[; ;Alarm_Status.c: 146:     do { LATEbits.LATE0 = 1; } while(0);
+[e :U 872 ]
 {
 [e = . . _LATEbits 0 0 -> -> 1 `i `uc ]
 }
-[e :U 868 ]
-"121
-[; ;Alarm_Status.c: 121:     do { LATEbits.LATE1 = ~LATEbits.LATE1; } while(0);
-[e :U 872 ]
+[e :U 871 ]
+"147
+[; ;Alarm_Status.c: 147:     do { LATEbits.LATE1 = ~LATEbits.LATE1; } while(0);
+[e :U 875 ]
 {
 [e = . . _LATEbits 0 1 -> ~ -> . . _LATEbits 0 1 `i `uc ]
 }
-[e :U 871 ]
-"124
-[; ;Alarm_Status.c: 124:     tecla = KPD_GetKey();
-[e = _tecla ( _KPD_GetKey ..  ]
-"126
-[; ;Alarm_Status.c: 126:     if (tecla != '\0' && tecla_ant == '\0') {
-[e $ ! && != -> _tecla `ui -> 0 `ui == -> _tecla_ant `ui -> 0 `ui 873  ]
-{
-"127
-[; ;Alarm_Status.c: 127:         if (g_pin_index < 4 && (tecla >= '0' && tecla <= '9')) {
-[e $ ! && < -> _g_pin_index `i -> 4 `i && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 874  ]
-{
-"128
-[; ;Alarm_Status.c: 128:             g_pin_buffer[g_pin_index] = tecla;
-[e = *U + &U _g_pin_buffer * -> _g_pin_index `ux -> -> # *U &U _g_pin_buffer `ui `ux _tecla ]
-"129
-[; ;Alarm_Status.c: 129:             LCD_SetCursor(1, g_pin_index);
-[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc _g_pin_index ]
-"130
-[; ;Alarm_Status.c: 130:             LCD_SendChar('*');
-[e ( _LCD_SendChar (1 -> -> 42 `ui `uc ]
-"131
-[; ;Alarm_Status.c: 131:             g_pin_index++;
-[e ++ _g_pin_index -> -> 1 `i `uc ]
-"132
-[; ;Alarm_Status.c: 132:         }
-}
 [e :U 874 ]
-"133
-[; ;Alarm_Status.c: 133:     }
+"150
+[; ;Alarm_Status.c: 150:     tecla = KPD_GetKey();
+[e = _tecla ( _KPD_GetKey ..  ]
+"152
+[; ;Alarm_Status.c: 152:     if (tecla != '\0' && tecla_ant == '\0') {
+[e $ ! && != -> _tecla `ui -> 0 `ui == -> _tecla_ant `ui -> 0 `ui 876  ]
+{
+"153
+[; ;Alarm_Status.c: 153:         if (g_pin_index < 4 && (tecla >= '0' && tecla <= '9')) {
+[e $ ! && < -> _g_pin_index `i -> 4 `i && >= -> _tecla `ui -> 48 `ui <= -> _tecla `ui -> 57 `ui 877  ]
+{
+"154
+[; ;Alarm_Status.c: 154:             g_pin_buffer[g_pin_index] = tecla;
+[e = *U + &U _g_pin_buffer * -> _g_pin_index `ux -> -> # *U &U _g_pin_buffer `ui `ux _tecla ]
+"155
+[; ;Alarm_Status.c: 155:             LCD_SetCursor(1, g_pin_index);
+[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc _g_pin_index ]
+"156
+[; ;Alarm_Status.c: 156:             LCD_SendChar('*');
+[e ( _LCD_SendChar (1 -> -> 42 `ui `uc ]
+"157
+[; ;Alarm_Status.c: 157:             g_pin_index++;
+[e ++ _g_pin_index -> -> 1 `i `uc ]
+"158
+[; ;Alarm_Status.c: 158:         }
 }
-[e :U 873 ]
-"134
-[; ;Alarm_Status.c: 134:     tecla_ant = tecla;
+[e :U 877 ]
+"159
+[; ;Alarm_Status.c: 159:     }
+}
+[e :U 876 ]
+"160
+[; ;Alarm_Status.c: 160:     tecla_ant = tecla;
 [e = _tecla_ant _tecla ]
-"137
-[; ;Alarm_Status.c: 137:     if (g_pin_index == 4) {
-[e $ ! == -> _g_pin_index `i -> 4 `i 875  ]
+"163
+[; ;Alarm_Status.c: 163:     if (g_pin_index == 4) {
+[e $ ! == -> _g_pin_index `i -> 4 `i 878  ]
 {
-"138
-[; ;Alarm_Status.c: 138:         g_pin_buffer[4] = '\0';
+"164
+[; ;Alarm_Status.c: 164:         g_pin_buffer[4] = '\0';
 [e = *U + &U _g_pin_buffer * -> -> -> 4 `i `ui `ux -> -> # *U &U _g_pin_buffer `ui `ux -> -> 0 `ui `uc ]
-"140
-[; ;Alarm_Status.c: 140:         if (strcmp(g_pin_buffer, "1234") == 0) {
-[e $ ! == ( _strcmp (2 , -> &U _g_pin_buffer `*Cuc :s 8C -> 0 `i 876  ]
+"166
+[; ;Alarm_Status.c: 166:         if (strcmp(g_pin_buffer, "1234") == 0) {
+[e $ ! == ( _strcmp (2 , -> &U _g_pin_buffer `*Cuc :s 9C -> 0 `i 879  ]
 {
-"142
-[; ;Alarm_Status.c: 142:             do { LATEbits.LATE0 = 0; } while(0);
-[e :U 879 ]
+"168
+[; ;Alarm_Status.c: 168:             do { LATEbits.LATE0 = 0; } while(0);
+[e :U 882 ]
 {
 [e = . . _LATEbits 0 0 -> -> 0 `i `uc ]
 }
-[e :U 878 ]
-"143
-[; ;Alarm_Status.c: 143:             do { LATEbits.LATE1 = 0; } while(0);
-[e :U 882 ]
+[e :U 881 ]
+"169
+[; ;Alarm_Status.c: 169:             do { LATEbits.LATE1 = 0; } while(0);
+[e :U 885 ]
 {
 [e = . . _LATEbits 0 1 -> -> 0 `i `uc ]
 }
-[e :U 881 ]
-"145
-[; ;Alarm_Status.c: 145:             LCD_Clear();
+[e :U 884 ]
+"171
+[; ;Alarm_Status.c: 171:             LCD_Clear();
 [e ( _LCD_Clear ..  ]
-"146
-[; ;Alarm_Status.c: 146:             LCD_SetCursor(0,0);
+"172
+[; ;Alarm_Status.c: 172:             LCD_SetCursor(0,0);
 [e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"147
-[; ;Alarm_Status.c: 147:             LCD_SendString("Sistema DESARMADO");
-[e ( _LCD_SendString (1 :s 9C ]
-"148
-[; ;Alarm_Status.c: 148:             LCD_SetCursor(1,0);
-[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
-"149
-[; ;Alarm_Status.c: 149:             LCD_SendString("Presione A");
+"173
+[; ;Alarm_Status.c: 173:             LCD_SendString("Sistema DESARMADO");
 [e ( _LCD_SendString (1 :s 10C ]
-"151
-[; ;Alarm_Status.c: 151:             g_estado_actual = DISARMED;
-[e = _g_estado_actual . `E36 0 ]
-"152
-[; ;Alarm_Status.c: 152:         } else {
-}
-[e $U 883  ]
-[e :U 876 ]
-{
-"154
-[; ;Alarm_Status.c: 154:             g_pin_index = 0;
-[e = _g_pin_index -> -> 0 `i `uc ]
-"155
-[; ;Alarm_Status.c: 155:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
-[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
-"156
-[; ;Alarm_Status.c: 156:             LCD_Clear();
-[e ( _LCD_Clear ..  ]
-"157
-[; ;Alarm_Status.c: 157:             LCD_SetCursor(0,0);
-[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
-"158
-[; ;Alarm_Status.c: 158:             LCD_SendString("!! INTRUSION !!");
+"174
+[; ;Alarm_Status.c: 174:             LCD_SetCursor(1,0);
+[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"175
+[; ;Alarm_Status.c: 175:             LCD_SendString("Presione A");
 [e ( _LCD_SendString (1 :s 11C ]
-"160
-[; ;Alarm_Status.c: 160:         }
+"177
+[; ;Alarm_Status.c: 177:             g_estado_actual = DISARMED;
+[e = _g_estado_actual . `E36 0 ]
+"178
+[; ;Alarm_Status.c: 178:         } else {
 }
-[e :U 883 ]
-"161
-[; ;Alarm_Status.c: 161:     }
+[e $U 886  ]
+[e :U 879 ]
+{
+"180
+[; ;Alarm_Status.c: 180:             g_pin_index = 0;
+[e = _g_pin_index -> -> 0 `i `uc ]
+"181
+[; ;Alarm_Status.c: 181:             memset(g_pin_buffer, 0, sizeof(g_pin_buffer));
+[e ( _memset (3 , , -> &U _g_pin_buffer `*v -> 0 `i -> # _g_pin_buffer `ui ]
+"182
+[; ;Alarm_Status.c: 182:             LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"183
+[; ;Alarm_Status.c: 183:             LCD_SetCursor(0,0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"184
+[; ;Alarm_Status.c: 184:             LCD_SendString("!! INTRUSION !!");
+[e ( _LCD_SendString (1 :s 12C ]
+"186
+[; ;Alarm_Status.c: 186:         }
 }
-[e :U 875 ]
-"162
-[; ;Alarm_Status.c: 162: }
-[e :UE 866 ]
+[e :U 886 ]
+"187
+[; ;Alarm_Status.c: 187:     }
 }
-[a 5C 80 73 78 32 73 110 99 111 114 114 101 99 116 111 0 ]
-[a 6C 83 105 115 116 101 109 97 32 68 69 83 65 82 77 65 68 79 0 ]
-[a 9C 83 105 115 116 101 109 97 32 68 69 83 65 82 77 65 68 79 0 ]
-[a 4C 83 105 115 116 101 109 97 32 65 82 77 65 68 79 0 ]
-[a 7C 80 114 101 115 105 111 110 101 32 65 0 ]
-[a 10C 80 114 101 115 105 111 110 101 32 65 0 ]
-[a 1C 73 110 116 114 111 100 117 122 99 97 32 80 73 78 58 0 ]
+[e :U 878 ]
+"188
+[; ;Alarm_Status.c: 188: }
+[e :UE 869 ]
+}
+"190
+[; ;Alarm_Status.c: 190: void mostrar_zona_alarma(void) {
+[v _mostrar_zona_alarma `(v ~T0 @X0 1 ef ]
+{
+[e :U _mostrar_zona_alarma ]
+[f ]
+"191
+[; ;Alarm_Status.c: 191:     LCD_Clear();
+[e ( _LCD_Clear ..  ]
+"192
+[; ;Alarm_Status.c: 192:     LCD_SetCursor(0, 0);
+[e ( _LCD_SetCursor (2 , -> -> 0 `i `uc -> -> 0 `i `uc ]
+"193
+[; ;Alarm_Status.c: 193:     LCD_SendString("!! INTRUSION !!");
+[e ( _LCD_SendString (1 :s 13C ]
+"195
+[; ;Alarm_Status.c: 195:     LCD_SetCursor(1, 0);
+[e ( _LCD_SetCursor (2 , -> -> 1 `i `uc -> -> 0 `i `uc ]
+"198
+[; ;Alarm_Status.c: 198:     switch (g_zona_alarma) {
+[e $U 889  ]
+{
+"199
+[; ;Alarm_Status.c: 199:         case 1: LCD_SendString("P. PRINCIPAL"); break;
+[e :U 890 ]
+[e ( _LCD_SendString (1 :s 14C ]
+[e $U 888  ]
+"200
+[; ;Alarm_Status.c: 200:         case 2: LCD_SendString("P. TRASERA"); break;
+[e :U 891 ]
+[e ( _LCD_SendString (1 :s 15C ]
+[e $U 888  ]
+"201
+[; ;Alarm_Status.c: 201:         case 3: LCD_SendString("VENTANA 1"); break;
+[e :U 892 ]
+[e ( _LCD_SendString (1 :s 16C ]
+[e $U 888  ]
+"202
+[; ;Alarm_Status.c: 202:         case 4: LCD_SendString("VENTANA 2"); break;
+[e :U 893 ]
+[e ( _LCD_SendString (1 :s 17C ]
+[e $U 888  ]
+"203
+[; ;Alarm_Status.c: 203:         case 5: LCD_SendString("VENTANA 3"); break;
+[e :U 894 ]
+[e ( _LCD_SendString (1 :s 18C ]
+[e $U 888  ]
+"204
+[; ;Alarm_Status.c: 204:         case 6: LCD_SendString("VENTANA 4"); break;
+[e :U 895 ]
+[e ( _LCD_SendString (1 :s 19C ]
+[e $U 888  ]
+"205
+[; ;Alarm_Status.c: 205:         default: LCD_SendString("ZONA DESCONOC."); break;
+[e :U 896 ]
+[e ( _LCD_SendString (1 :s 20C ]
+[e $U 888  ]
+"206
+[; ;Alarm_Status.c: 206:     }
+}
+[e $U 888  ]
+[e :U 889 ]
+[e [\ _g_zona_alarma , $ -> 1 `i 890
+ , $ -> 2 `i 891
+ , $ -> 3 `i 892
+ , $ -> 4 `i 893
+ , $ -> 5 `i 894
+ , $ -> 6 `i 895
+ 896 ]
+[e :U 888 ]
+"207
+[; ;Alarm_Status.c: 207: }
+[e :UE 887 ]
+}
+[p f _sprintf 8388736 ]
+[a 6C 80 73 78 32 73 110 99 111 114 114 101 99 116 111 0 ]
+[a 7C 83 105 115 116 101 109 97 32 68 69 83 65 82 77 65 68 79 0 ]
+[a 10C 83 105 115 116 101 109 97 32 68 69 83 65 82 77 65 68 79 0 ]
+[a 5C 83 105 115 116 101 109 97 32 65 82 77 65 68 79 0 ]
+[a 14C 80 46 32 80 82 73 78 67 73 80 65 76 0 ]
+[a 15C 80 46 32 84 82 65 83 69 82 65 0 ]
+[a 8C 80 114 101 115 105 111 110 101 32 65 0 ]
+[a 11C 80 114 101 115 105 111 110 101 32 65 0 ]
 [a 2C 73 110 116 114 111 100 117 122 99 97 32 80 73 78 58 0 ]
-[a 3C 49 50 51 52 0 ]
-[a 8C 49 50 51 52 0 ]
-[a 11C 33 33 32 73 78 84 82 85 83 73 79 78 32 33 33 0 ]
+[a 3C 73 110 116 114 111 100 117 122 99 97 32 80 73 78 58 0 ]
+[a 4C 49 50 51 52 0 ]
+[a 9C 49 50 51 52 0 ]
+[a 19C 86 69 78 84 65 78 65 32 52 0 ]
+[a 18C 86 69 78 84 65 78 65 32 51 0 ]
+[a 17C 86 69 78 84 65 78 65 32 50 0 ]
+[a 16C 86 69 78 84 65 78 65 32 49 0 ]
+[a 20C 90 79 78 65 32 68 69 83 67 79 78 79 67 46 0 ]
+[a 12C 33 33 32 73 78 84 82 85 83 73 79 78 32 33 33 0 ]
+[a 13C 33 33 32 73 78 84 82 85 83 73 79 78 32 33 33 0 ]
+[a 1C 84 101 109 112 58 32 37 100 32 67 32 32 32 0 ]

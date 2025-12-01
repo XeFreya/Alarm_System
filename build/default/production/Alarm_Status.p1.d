@@ -3,4 +3,6 @@ Alarm_Status.c  \
 Alarm_Status.h  \
 lcd_i2c.h  \
 keypad.h  \
-mcc_generated_files/pin_manager.h 
+ADC.h  \
+mcc_generated_files/pin_manager.h  \
+mcc_generated_files/adc.h 

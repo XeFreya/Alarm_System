@@ -812,10 +812,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "17406
 [; ;C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h: 17406: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-[v F6394 `Cuc ~T0 @X0 -> 4 `i t ]
+[v F6426 `Cuc ~T0 @X0 -> 4 `i t ]
 "6 keypad.c
 [; ;keypad.c: 6: static const char keys[4][4] = {
-[v _keys `F6394 ~T0 @X0 -> 4 `i s ]
+[v _keys `F6426 ~T0 @X0 -> 4 `i s ]
 [i _keys
 :U ..
 :U ..

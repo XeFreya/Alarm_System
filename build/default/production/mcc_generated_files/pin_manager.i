@@ -9665,14 +9665,51 @@ unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v3.00\\pic\\include/xc.h" 2 3
 # 55 "mcc_generated_files/pin_manager.h" 2
-# 304 "mcc_generated_files/pin_manager.h"
+# 366 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 316 "mcc_generated_files/pin_manager.h"
+# 378 "mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
+# 391 "mcc_generated_files/pin_manager.h"
+void IOCB4_ISR(void);
+# 414 "mcc_generated_files/pin_manager.h"
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 438 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB4_InterruptHandler)(void);
+# 462 "mcc_generated_files/pin_manager.h"
+void IOCB4_DefaultInterruptHandler(void);
+# 475 "mcc_generated_files/pin_manager.h"
+void IOCB5_ISR(void);
+# 498 "mcc_generated_files/pin_manager.h"
+void IOCB5_SetInterruptHandler(void (* InterruptHandler)(void));
+# 522 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB5_InterruptHandler)(void);
+# 546 "mcc_generated_files/pin_manager.h"
+void IOCB5_DefaultInterruptHandler(void);
+# 559 "mcc_generated_files/pin_manager.h"
+void IOCB6_ISR(void);
+# 582 "mcc_generated_files/pin_manager.h"
+void IOCB6_SetInterruptHandler(void (* InterruptHandler)(void));
+# 606 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB6_InterruptHandler)(void);
+# 630 "mcc_generated_files/pin_manager.h"
+void IOCB6_DefaultInterruptHandler(void);
+# 643 "mcc_generated_files/pin_manager.h"
+void IOCB7_ISR(void);
+# 666 "mcc_generated_files/pin_manager.h"
+void IOCB7_SetInterruptHandler(void (* InterruptHandler)(void));
+# 690 "mcc_generated_files/pin_manager.h"
+extern void (*IOCB7_InterruptHandler)(void);
+# 714 "mcc_generated_files/pin_manager.h"
+void IOCB7_DefaultInterruptHandler(void);
 # 50 "mcc_generated_files/pin_manager.c" 2
+ extern volatile uint8_t g_zona_alarma;
 
 
 
+void (*IOCB4_InterruptHandler)(void);
+void (*IOCB5_InterruptHandler)(void);
+void (*IOCB6_InterruptHandler)(void);
+void (*IOCB7_InterruptHandler)(void);
 
 
 void PIN_MANAGER_Initialize(void)
@@ -9700,7 +9737,7 @@ void PIN_MANAGER_Initialize(void)
 
     ANSELD = 0x00;
     ANSELC = 0xE4;
-    ANSELB = 0x30;
+    ANSELB = 0x00;
     ANSELE = 0x04;
     ANSELA = 0x2F;
 
@@ -9709,11 +9746,163 @@ void PIN_MANAGER_Initialize(void)
 
     WPUB = 0xF7;
     INTCON2bits.nRBPU = 0;
-# 97 "mcc_generated_files/pin_manager.c"
+
+
+
+
+
+
+
+    IOCBbits.IOCB4 = 1;
+
+    IOCBbits.IOCB5 = 1;
+
+    IOCBbits.IOCB6 = 1;
+
+    IOCBbits.IOCB7 = 1;
+
+
+
+
+    IOCB4_SetInterruptHandler(IOCB4_DefaultInterruptHandler);
+    IOCB5_SetInterruptHandler(IOCB5_DefaultInterruptHandler);
+    IOCB6_SetInterruptHandler(IOCB6_DefaultInterruptHandler);
+    IOCB7_SetInterruptHandler(IOCB7_DefaultInterruptHandler);
+
+
+    INTCONbits.RBIE = 1;
+
 }
 
 void PIN_MANAGER_IOC(void)
 {
 
-    INTCONbits.RBIF = 0;
+    if(INTCONbits.RBIE == 1 && INTCONbits.RBIF == 1)
+    {
+        if (g_zona_alarma == 0) {
+            if (PORTBbits.RB4 == 0) g_zona_alarma = 3;
+            else if (PORTBbits.RB5 == 0) g_zona_alarma = 4;
+            else if (PORTBbits.RB6 == 0) g_zona_alarma = 5;
+            else if (PORTBbits.RB7 == 0) g_zona_alarma = 6;
+        }
+
+
+        INTCONbits.RBIF = 0;
+    }
+}
+
+
+
+
+void IOCB4_ISR(void) {
+
+
+
+
+    if(IOCB4_InterruptHandler)
+    {
+        IOCB4_InterruptHandler();
+    }
+}
+
+
+
+
+void IOCB4_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCB4_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IOCB4_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void IOCB5_ISR(void) {
+
+
+
+
+    if(IOCB5_InterruptHandler)
+    {
+        IOCB5_InterruptHandler();
+    }
+}
+
+
+
+
+void IOCB5_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCB5_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IOCB5_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void IOCB6_ISR(void) {
+
+
+
+
+    if(IOCB6_InterruptHandler)
+    {
+        IOCB6_InterruptHandler();
+    }
+}
+
+
+
+
+void IOCB6_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCB6_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IOCB6_DefaultInterruptHandler(void){
+
+
+}
+
+
+
+
+void IOCB7_ISR(void) {
+
+
+
+
+    if(IOCB7_InterruptHandler)
+    {
+        IOCB7_InterruptHandler();
+    }
+}
+
+
+
+
+void IOCB7_SetInterruptHandler(void (* InterruptHandler)(void)){
+    IOCB7_InterruptHandler = InterruptHandler;
+}
+
+
+
+
+void IOCB7_DefaultInterruptHandler(void){
+
+
 }

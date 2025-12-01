@@ -10,8 +10,8 @@ channel_CTMU 29
 channel_DAC 30
 channel_FVRBuf2 31
 ]
-"103 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\main.c
-[e E6406 . `uc
+"90 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\main.c
+[e E6438 . `uc
 DISARMED 0
 FIN_SCREEN 1
 ARMED 2
@@ -31,14 +31,33 @@ FIN_SCREEN 1
 ARMED 2
 INTRUSION 3
 ]
+"30
+[e E6574 . `uc
+channel_AN0 0
+channel_CTMU 29
+channel_DAC 30
+channel_FVRBuf2 31
+]
 "25
 [v _alarm_disarmed alarm_disarmed `(v  1 e 1 0 ]
-"51
+"71
 [v _show_pin_screen show_pin_screen `(v  1 e 1 0 ]
-"109
+"135
 [v _armed_alarm armed_alarm `(v  1 e 1 0 ]
-"118
+"144
 [v _alert_alarm alert_alarm `(v  1 e 1 0 ]
+"190
+[v _mostrar_zona_alarma mostrar_zona_alarma `(v  1 e 1 0 ]
+"1 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+"1177 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+"1817
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
 "4 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\fleq.c
 [v ___fleq __fleq `(b  1 e 0 0 ]
 "62 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\float.c
@@ -51,8 +70,18 @@ INTRUSION 3
 [v ___ftmul __ftmul `(f  1 e 4 0 ]
 "19 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\ftsub.c
 [v ___ftsub __ftsub `(f  1 e 4 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 "3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
 [v _memset memset `(*.30v  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputs.c
+[v _fputs fputs `(i  1 e 2 0 ]
+"9 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
 "10 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "245
@@ -103,66 +132,68 @@ INTRUSION 3
 [v _ADC_IsConversionDone ADC_IsConversionDone `(a  1 e 1 0 ]
 "104
 [v _ADC_GetConversionResult ADC_GetConversionResult `(us  1 e 2 0 ]
-"37 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
-[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
-"46
-[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
-"52
-[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
-"56
-[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
-"60
-[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
-"69
-[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
-"75
-[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
-"79
-[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"83
-[v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
-"92
-[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
-"101
-[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
-"105
-[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
 "110
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+"44 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
+[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
+"53
+[v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
+"57
+[v _INT0_DefaultInterruptHandler INT0_DefaultInterruptHandler `(v  1 e 1 0 ]
+"70
+[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
+"79
+[v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
+"83
+[v _INT1_DefaultInterruptHandler INT1_DefaultInterruptHandler `(v  1 e 1 0 ]
+"96
+[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
+"105
+[v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
+"109
+[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
+"114
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
 "52 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_Initialize INTERRUPT_Initialize `(v  1 e 1 0 ]
-"58
+"61
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 "50 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 "60
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"55 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/pin_manager.c
+"60 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
+"156
+[v _IOCB4_SetInterruptHandler IOCB4_SetInterruptHandler `(v  1 e 1 0 ]
+"163
+[v _IOCB4_DefaultInterruptHandler IOCB4_DefaultInterruptHandler `(v  1 e 1 0 ]
+"185
+[v _IOCB5_SetInterruptHandler IOCB5_SetInterruptHandler `(v  1 e 1 0 ]
+"192
+[v _IOCB5_DefaultInterruptHandler IOCB5_DefaultInterruptHandler `(v  1 e 1 0 ]
+"214
+[v _IOCB6_SetInterruptHandler IOCB6_SetInterruptHandler `(v  1 e 1 0 ]
+"221
+[v _IOCB6_DefaultInterruptHandler IOCB6_DefaultInterruptHandler `(v  1 e 1 0 ]
+"243
+[v _IOCB7_SetInterruptHandler IOCB7_SetInterruptHandler `(v  1 e 1 0 ]
+"250
+[v _IOCB7_DefaultInterruptHandler IOCB7_DefaultInterruptHandler `(v  1 e 1 0 ]
 "13 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\Alarm_Status.c
-[v _g_estado_actual g_estado_actual `E6406  1 e 1 0 ]
+[v _g_estado_actual g_estado_actual `E6438  1 e 1 0 ]
 "14
 [v _g_pin_buffer g_pin_buffer `[5]uc  1 e 5 0 ]
 "15
 [v _g_pin_index g_pin_index `uc  1 e 1 0 ]
 "16
-[v _g_intrusion_flag g_intrusion_flag `VEuc  1 e 1 0 ]
+[v _g_zona_alarma g_zona_alarma `VEuc  1 e 1 0 ]
 "19
 [v _tecla tecla `uc  1 s 1 tecla ]
 "20
 [v _tecla_ant tecla_ant `uc  1 s 1 tecla_ant ]
 "52 C:/Program Files/Microchip/MPLABX/v6.25/packs/Microchip/PIC18F-K_DFP/1.14.301/xc8\pic\include\proc/pic18f46k22.h
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
-[s S618 . 1 `uc 1 ANSA0 1 0 :1:0 
-`uc 1 ANSA1 1 0 :1:1 
-`uc 1 ANSA2 1 0 :1:2 
-`uc 1 ANSA3 1 0 :1:3 
-`uc 1 . 1 0 :1:4 
-`uc 1 ANSA5 1 0 :1:5 
-]
-"67
-[u S625 . 1 `S618 1 . 1 0 ]
-[v _ANSELAbits ANSELAbits `VES625  1 e 1 @3896 ]
 "97
 [v _ANSELB ANSELB `VEuc  1 e 1 @3897 ]
 "147
@@ -173,7 +204,76 @@ INTRUSION 3
 [v _ANSELE ANSELE `VEuc  1 e 1 @3900 ]
 "2719
 [v _WPUB WPUB `VEuc  1 e 1 @3937 ]
-[s S720 . 1 `uc 1 RC0 1 0 :1:0 
+[s S79 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 IOCB4 1 0 :1:4 
+`uc 1 IOCB5 1 0 :1:5 
+`uc 1 IOCB6 1 0 :1:6 
+`uc 1 IOCB7 1 0 :1:7 
+]
+"2795
+[u S85 . 1 `S79 1 . 1 0 ]
+[v _IOCBbits IOCBbits `VES85  1 e 1 @3938 ]
+"6565
+[v _PORTB PORTB `VEuc  1 e 1 @3969 ]
+[s S184 . 1 `uc 1 RB0 1 0 :1:0 
+`uc 1 RB1 1 0 :1:1 
+`uc 1 RB2 1 0 :1:2 
+`uc 1 RB3 1 0 :1:3 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"6635
+[s S193 . 1 `uc 1 INT0 1 0 :1:0 
+`uc 1 INT1 1 0 :1:1 
+`uc 1 INT2 1 0 :1:2 
+`uc 1 CCP2 1 0 :1:3 
+`uc 1 KBI0 1 0 :1:4 
+`uc 1 KBI1 1 0 :1:5 
+`uc 1 KBI2 1 0 :1:6 
+`uc 1 KBI3 1 0 :1:7 
+]
+[s S202 . 1 `uc 1 AN12 1 0 :1:0 
+`uc 1 AN10 1 0 :1:1 
+`uc 1 AN8 1 0 :1:2 
+`uc 1 AN9 1 0 :1:3 
+`uc 1 AN11 1 0 :1:4 
+`uc 1 AN13 1 0 :1:5 
+`uc 1 PGC 1 0 :1:6 
+`uc 1 PGD 1 0 :1:7 
+]
+[s S211 . 1 `uc 1 FLT0 1 0 :1:0 
+`uc 1 C12IN3M 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2M 1 0 :1:3 
+`uc 1 T5G 1 0 :1:4 
+`uc 1 T1G 1 0 :1:5 
+]
+[s S218 . 1 `uc 1 SRI 1 0 :1:0 
+`uc 1 C12IN3N 1 0 :1:1 
+`uc 1 . 1 0 :1:2 
+`uc 1 C12IN2N 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 CCP3 1 0 :1:5 
+]
+[s S225 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 CTED1 1 0 :1:2 
+`uc 1 CTED2 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 T3CKI 1 0 :1:5 
+]
+[s S231 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 P2A 1 0 :1:3 
+`uc 1 . 1 0 :1:4 
+`uc 1 P3A 1 0 :1:5 
+]
+[s S236 . 1 `uc 1 . 1 0 :3:0 
+`uc 1 CCP2_PA2 1 0 :1:3 
+]
+[u S239 . 1 `S184 1 . 1 0 `S193 1 . 1 0 `S202 1 . 1 0 `S211 1 . 1 0 `S218 1 . 1 0 `S225 1 . 1 0 `S231 1 . 1 0 `S236 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES239  1 e 1 @3969 ]
+[s S951 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -183,7 +283,7 @@ INTRUSION 3
 `uc 1 RC7 1 0 :1:7 
 ]
 "6907
-[s S802 . 1 `uc 1 T1OSO 1 0 :1:0 
+[s S1033 . 1 `uc 1 T1OSO 1 0 :1:0 
 `uc 1 T1OSI 1 0 :1:1 
 `uc 1 T5CKI 1 0 :1:2 
 `uc 1 SCK 1 0 :1:3 
@@ -192,7 +292,7 @@ INTRUSION 3
 `uc 1 TX 1 0 :1:6 
 `uc 1 RX 1 0 :1:7 
 ]
-[s S811 . 1 `uc 1 P2B 1 0 :1:0 
+[s S1042 . 1 `uc 1 P2B 1 0 :1:0 
 `uc 1 P2A 1 0 :1:1 
 `uc 1 P1A 1 0 :1:2 
 `uc 1 SCL 1 0 :1:3 
@@ -201,7 +301,7 @@ INTRUSION 3
 `uc 1 CK 1 0 :1:6 
 `uc 1 DT 1 0 :1:7 
 ]
-[s S820 . 1 `uc 1 T1CKI 1 0 :1:0 
+[s S1051 . 1 `uc 1 T1CKI 1 0 :1:0 
 `uc 1 CCP2 1 0 :1:1 
 `uc 1 CCP1 1 0 :1:2 
 `uc 1 SCK1 1 0 :1:3 
@@ -210,7 +310,7 @@ INTRUSION 3
 `uc 1 TX1 1 0 :1:6 
 `uc 1 RX1 1 0 :1:7 
 ]
-[s S829 . 1 `uc 1 T3CKI 1 0 :1:0 
+[s S1060 . 1 `uc 1 T3CKI 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 CTPLS 1 0 :1:2 
 `uc 1 SCL1 1 0 :1:3 
@@ -219,7 +319,7 @@ INTRUSION 3
 `uc 1 CK1 1 0 :1:6 
 `uc 1 DT1 1 0 :1:7 
 ]
-[s S838 . 1 `uc 1 T3G 1 0 :1:0 
+[s S1069 . 1 `uc 1 T3G 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 AN14 1 0 :1:2 
 `uc 1 AN15 1 0 :1:3 
@@ -228,13 +328,13 @@ INTRUSION 3
 `uc 1 AN18 1 0 :1:6 
 `uc 1 AN19 1 0 :1:7 
 ]
-[s S847 . 1 `uc 1 . 1 0 :1:0 
+[s S1078 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 PA2 1 0 :1:1 
 `uc 1 PA1 1 0 :1:2 
 ]
-[u S851 . 1 `S720 1 . 1 0 `S802 1 . 1 0 `S811 1 . 1 0 `S820 1 . 1 0 `S829 1 . 1 0 `S838 1 . 1 0 `S847 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES851  1 e 1 @3970 ]
-[s S1019 . 1 `uc 1 RD0 1 0 :1:0 
+[u S1082 . 1 `S951 1 . 1 0 `S1033 1 . 1 0 `S1042 1 . 1 0 `S1051 1 . 1 0 `S1060 1 . 1 0 `S1069 1 . 1 0 `S1078 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES1082  1 e 1 @3970 ]
+[s S1250 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -244,7 +344,7 @@ INTRUSION 3
 `uc 1 RD7 1 0 :1:7 
 ]
 "7205
-[s S1028 . 1 `uc 1 . 1 0 :2:0 
+[s S1259 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 P2B 1 0 :1:2 
 `uc 1 P2C 1 0 :1:3 
 `uc 1 P2D 1 0 :1:4 
@@ -252,16 +352,16 @@ INTRUSION 3
 `uc 1 P1C 1 0 :1:6 
 `uc 1 P1D 1 0 :1:7 
 ]
-[s S1036 . 1 `uc 1 . 1 0 :1:0 
+[s S1267 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 CCP4 1 0 :1:1 
 `uc 1 . 1 0 :4:2 
 `uc 1 TX2 1 0 :1:6 
 `uc 1 RX2 1 0 :1:7 
 ]
-[s S1042 . 1 `uc 1 . 1 0 :3:0 
+[s S1273 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_SS2 1 0 :1:3 
 ]
-[s S1045 . 1 `uc 1 SCK2 1 0 :1:0 
+[s S1276 . 1 `uc 1 SCK2 1 0 :1:0 
 `uc 1 SDI2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 nSS2 1 0 :1:3 
@@ -270,12 +370,12 @@ INTRUSION 3
 `uc 1 CK2 1 0 :1:6 
 `uc 1 DT2 1 0 :1:7 
 ]
-[s S1054 . 1 `uc 1 SCL2 1 0 :1:0 
+[s S1285 . 1 `uc 1 SCL2 1 0 :1:0 
 `uc 1 SDA2 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SS2 1 0 :1:3 
 ]
-[s S1059 . 1 `uc 1 AN20 1 0 :1:0 
+[s S1290 . 1 `uc 1 AN20 1 0 :1:0 
 `uc 1 AN21 1 0 :1:1 
 `uc 1 AN22 1 0 :1:2 
 `uc 1 AN23 1 0 :1:3 
@@ -284,15 +384,36 @@ INTRUSION 3
 `uc 1 AN26 1 0 :1:6 
 `uc 1 AN27 1 0 :1:7 
 ]
-[u S1068 . 1 `S1019 1 . 1 0 `S1028 1 . 1 0 `S1036 1 . 1 0 `S1042 1 . 1 0 `S1045 1 . 1 0 `S1054 1 . 1 0 `S1059 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES1068  1 e 1 @3971 ]
+[u S1299 . 1 `S1250 1 . 1 0 `S1259 1 . 1 0 `S1267 1 . 1 0 `S1273 1 . 1 0 `S1276 1 . 1 0 `S1285 1 . 1 0 `S1290 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES1299  1 e 1 @3971 ]
 "7560
 [v _LATA LATA `VEuc  1 e 1 @3977 ]
 "7672
 [v _LATB LATB `VEuc  1 e 1 @3978 ]
+[s S756 . 1 `uc 1 LATB0 1 0 :1:0 
+`uc 1 LATB1 1 0 :1:1 
+`uc 1 LATB2 1 0 :1:2 
+`uc 1 LATB3 1 0 :1:3 
+`uc 1 LATB4 1 0 :1:4 
+`uc 1 LATB5 1 0 :1:5 
+`uc 1 LATB6 1 0 :1:6 
+`uc 1 LATB7 1 0 :1:7 
+]
+"7699
+[s S765 . 1 `uc 1 LB0 1 0 :1:0 
+`uc 1 LB1 1 0 :1:1 
+`uc 1 LB2 1 0 :1:2 
+`uc 1 LB3 1 0 :1:3 
+`uc 1 LB4 1 0 :1:4 
+`uc 1 LB5 1 0 :1:5 
+`uc 1 LB6 1 0 :1:6 
+`uc 1 LB7 1 0 :1:7 
+]
+[u S774 . 1 `S756 1 . 1 0 `S765 1 . 1 0 ]
+[v _LATBbits LATBbits `VES774  1 e 1 @3978 ]
 "7784
 [v _LATC LATC `VEuc  1 e 1 @3979 ]
-[s S751 . 1 `uc 1 LATC0 1 0 :1:0 
+[s S982 . 1 `uc 1 LATC0 1 0 :1:0 
 `uc 1 LATC1 1 0 :1:1 
 `uc 1 LATC2 1 0 :1:2 
 `uc 1 LATC3 1 0 :1:3 
@@ -302,7 +423,7 @@ INTRUSION 3
 `uc 1 LATC7 1 0 :1:7 
 ]
 "7811
-[s S760 . 1 `uc 1 LC0 1 0 :1:0 
+[s S991 . 1 `uc 1 LC0 1 0 :1:0 
 `uc 1 LC1 1 0 :1:1 
 `uc 1 LC2 1 0 :1:2 
 `uc 1 LC3 1 0 :1:3 
@@ -311,11 +432,11 @@ INTRUSION 3
 `uc 1 LC6 1 0 :1:6 
 `uc 1 LC7 1 0 :1:7 
 ]
-[u S769 . 1 `S751 1 . 1 0 `S760 1 . 1 0 ]
-[v _LATCbits LATCbits `VES769  1 e 1 @3979 ]
+[u S1000 . 1 `S982 1 . 1 0 `S991 1 . 1 0 ]
+[v _LATCbits LATCbits `VES1000  1 e 1 @3979 ]
 "7896
 [v _LATD LATD `VEuc  1 e 1 @3980 ]
-[s S977 . 1 `uc 1 LATD0 1 0 :1:0 
+[s S1208 . 1 `uc 1 LATD0 1 0 :1:0 
 `uc 1 LATD1 1 0 :1:1 
 `uc 1 LATD2 1 0 :1:2 
 `uc 1 LATD3 1 0 :1:3 
@@ -325,7 +446,7 @@ INTRUSION 3
 `uc 1 LATD7 1 0 :1:7 
 ]
 "7923
-[s S986 . 1 `uc 1 LD0 1 0 :1:0 
+[s S1217 . 1 `uc 1 LD0 1 0 :1:0 
 `uc 1 LD1 1 0 :1:1 
 `uc 1 LD2 1 0 :1:2 
 `uc 1 LD3 1 0 :1:3 
@@ -334,28 +455,28 @@ INTRUSION 3
 `uc 1 LD6 1 0 :1:6 
 `uc 1 LD7 1 0 :1:7 
 ]
-[u S995 . 1 `S977 1 . 1 0 `S986 1 . 1 0 ]
-[v _LATDbits LATDbits `VES995  1 e 1 @3980 ]
+[u S1226 . 1 `S1208 1 . 1 0 `S1217 1 . 1 0 ]
+[v _LATDbits LATDbits `VES1226  1 e 1 @3980 ]
 "8008
 [v _LATE LATE `VEuc  1 e 1 @3981 ]
-[s S346 . 1 `uc 1 LATE0 1 0 :1:0 
+[s S1422 . 1 `uc 1 LATE0 1 0 :1:0 
 `uc 1 LATE1 1 0 :1:1 
 `uc 1 LATE2 1 0 :1:2 
 ]
 "8025
-[s S350 . 1 `uc 1 LE0 1 0 :1:0 
+[s S1426 . 1 `uc 1 LE0 1 0 :1:0 
 `uc 1 LE1 1 0 :1:1 
 `uc 1 LE2 1 0 :1:2 
 ]
-[u S354 . 1 `S346 1 . 1 0 `S350 1 . 1 0 ]
-[v _LATEbits LATEbits `VES354  1 e 1 @3981 ]
+[u S1430 . 1 `S1422 1 . 1 0 `S1426 1 . 1 0 ]
+[v _LATEbits LATEbits `VES1430  1 e 1 @3981 ]
 "8060
 [v _TRISA TRISA `VEuc  1 e 1 @3986 ]
 "8282
 [v _TRISB TRISB `VEuc  1 e 1 @3987 ]
 "8504
 [v _TRISC TRISC `VEuc  1 e 1 @3988 ]
-[s S711 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S942 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -365,8 +486,8 @@ INTRUSION 3
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "8536
-[u S729 . 1 `S711 1 . 1 0 `S720 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES729  1 e 1 @3988 ]
+[u S960 . 1 `S942 1 . 1 0 `S951 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES960  1 e 1 @3988 ]
 "8726
 [v _TRISD TRISD `VEuc  1 e 1 @3989 ]
 "8948
@@ -379,15 +500,15 @@ INTRUSION 3
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @4033 ]
 "13611
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @4034 ]
-[s S176 . 1 `uc 1 . 1 0 :1:0 
+[s S409 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_NOT_DONE 1 0 :1:1 
 ]
 "13656
-[s S179 . 1 `uc 1 ADON 1 0 :1:0 
+[s S412 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
-[s S183 . 1 `uc 1 . 1 0 :1:0 
+[s S416 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -395,43 +516,43 @@ INTRUSION 3
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S191 . 1 `uc 1 . 1 0 :1:0 
+[s S424 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 DONE 1 0 :1:1 
 ]
-[s S194 . 1 `uc 1 . 1 0 :1:0 
+[s S427 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_DONE 1 0 :1:1 
 ]
-[s S197 . 1 `uc 1 . 1 0 :1:0 
+[s S430 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 nDONE 1 0 :1:1 
 ]
-[s S200 . 1 `uc 1 . 1 0 :1:0 
+[s S433 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO_DONE 1 0 :1:1 
 ]
-[s S203 . 1 `uc 1 . 1 0 :1:0 
+[s S436 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GODONE 1 0 :1:1 
 ]
-[u S206 . 1 `S176 1 . 1 0 `S179 1 . 1 0 `S183 1 . 1 0 `S191 1 . 1 0 `S194 1 . 1 0 `S197 1 . 1 0 `S200 1 . 1 0 `S203 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES206  1 e 1 @4034 ]
+[u S439 . 1 `S409 1 . 1 0 `S412 1 . 1 0 `S416 1 . 1 0 `S424 1 . 1 0 `S427 1 . 1 0 `S430 1 . 1 0 `S433 1 . 1 0 `S436 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES439  1 e 1 @4034 ]
 "13743
 [v _ADRESL ADRESL `VEuc  1 e 1 @4035 ]
 "13763
 [v _ADRESH ADRESH `VEuc  1 e 1 @4036 ]
-[s S433 . 1 `uc 1 NOT_BOR 1 0 :1:0 
+[s S639 . 1 `uc 1 NOT_BOR 1 0 :1:0 
 ]
 "15871
-[s S435 . 1 `uc 1 . 1 0 :1:0 
+[s S641 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 NOT_POR 1 0 :1:1 
 ]
-[s S438 . 1 `uc 1 . 1 0 :2:0 
+[s S644 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 NOT_PD 1 0 :1:2 
 ]
-[s S441 . 1 `uc 1 . 1 0 :3:0 
+[s S647 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 NOT_TO 1 0 :1:3 
 ]
-[s S444 . 1 `uc 1 . 1 0 :4:0 
+[s S650 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 NOT_RI 1 0 :1:4 
 ]
-[s S447 . 1 `uc 1 nBOR 1 0 :1:0 
+[s S653 . 1 `uc 1 nBOR 1 0 :1:0 
 `uc 1 nPOR 1 0 :1:1 
 `uc 1 nPD 1 0 :1:2 
 `uc 1 nTO 1 0 :1:3 
@@ -440,19 +561,19 @@ INTRUSION 3
 `uc 1 SBOREN 1 0 :1:6 
 `uc 1 IPEN 1 0 :1:7 
 ]
-[s S456 . 1 `uc 1 BOR 1 0 :1:0 
+[s S662 . 1 `uc 1 BOR 1 0 :1:0 
 `uc 1 POR 1 0 :1:1 
 `uc 1 PD 1 0 :1:2 
 `uc 1 TO 1 0 :1:3 
 `uc 1 RI 1 0 :1:4 
 ]
-[u S462 . 1 `S433 1 . 1 0 `S435 1 . 1 0 `S438 1 . 1 0 `S441 1 . 1 0 `S444 1 . 1 0 `S447 1 . 1 0 `S456 1 . 1 0 ]
-[v _RCONbits RCONbits `VES462  1 e 1 @4048 ]
+[u S668 . 1 `S639 1 . 1 0 `S641 1 . 1 0 `S644 1 . 1 0 `S647 1 . 1 0 `S650 1 . 1 0 `S653 1 . 1 0 `S662 1 . 1 0 ]
+[v _RCONbits RCONbits `VES668  1 e 1 @4048 ]
 "15989
 [v _OSCCON2 OSCCON2 `VEuc  1 e 1 @4050 ]
 "16046
 [v _OSCCON OSCCON `VEuc  1 e 1 @4051 ]
-[s S302 . 1 `uc 1 INT1IF 1 0 :1:0 
+[s S535 . 1 `uc 1 INT1IF 1 0 :1:0 
 `uc 1 INT2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1IE 1 0 :1:3 
@@ -462,7 +583,7 @@ INTRUSION 3
 `uc 1 INT2IP 1 0 :1:7 
 ]
 "16791
-[s S311 . 1 `uc 1 INT1F 1 0 :1:0 
+[s S544 . 1 `uc 1 INT1F 1 0 :1:0 
 `uc 1 INT2F 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 INT1E 1 0 :1:3 
@@ -471,13 +592,13 @@ INTRUSION 3
 `uc 1 INT1P 1 0 :1:6 
 `uc 1 INT2P 1 0 :1:7 
 ]
-[u S320 . 1 `S302 1 . 1 0 `S311 1 . 1 0 ]
-[v _INTCON3bits INTCON3bits `VES320  1 e 1 @4080 ]
-[s S40 . 1 `uc 1 . 1 0 :7:0 
+[u S553 . 1 `S535 1 . 1 0 `S544 1 . 1 0 ]
+[v _INTCON3bits INTCON3bits `VES553  1 e 1 @4080 ]
+[s S44 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 NOT_RBPU 1 0 :1:7 
 ]
 "16881
-[s S43 . 1 `uc 1 RBIP 1 0 :1:0 
+[s S47 . 1 `uc 1 RBIP 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 TMR0IP 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -486,12 +607,12 @@ INTRUSION 3
 `uc 1 INTEDG0 1 0 :1:6 
 `uc 1 nRBPU 1 0 :1:7 
 ]
-[s S52 . 1 `uc 1 . 1 0 :7:0 
+[s S56 . 1 `uc 1 . 1 0 :7:0 
 `uc 1 RBPU 1 0 :1:7 
 ]
-[u S55 . 1 `S40 1 . 1 0 `S43 1 . 1 0 `S52 1 . 1 0 ]
-[v _INTCON2bits INTCON2bits `VES55  1 e 1 @4081 ]
-[s S75 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S59 . 1 `S44 1 . 1 0 `S47 1 . 1 0 `S56 1 . 1 0 ]
+[v _INTCON2bits INTCON2bits `VES59  1 e 1 @4081 ]
+[s S134 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INT0IF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -501,7 +622,7 @@ INTRUSION 3
 `uc 1 GIE_GIEH 1 0 :1:7 
 ]
 "16958
-[s S84 . 1 `uc 1 . 1 0 :1:0 
+[s S143 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 INT0F 1 0 :1:1 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -510,80 +631,206 @@ INTRUSION 3
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
-[s S93 . 1 `uc 1 . 1 0 :6:0 
+[s S152 . 1 `uc 1 . 1 0 :6:0 
 `uc 1 GIEL 1 0 :1:6 
 `uc 1 GIEH 1 0 :1:7 
 ]
-[u S97 . 1 `S75 1 . 1 0 `S84 1 . 1 0 `S93 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES97  1 e 1 @4082 ]
+[u S156 . 1 `S134 1 . 1 0 `S143 1 . 1 0 `S152 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES156  1 e 1 @4082 ]
+"153 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c
+[v _prec prec `i  1 s 2 prec ]
+[v _width width `i  1 s 2 width ]
+"154
+[v _flags flags `uc  1 s 1 flags ]
+"185
+[v _dbuf dbuf `[32]uc  1 s 32 dbuf ]
 "6 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\keypad.c
 [v _keys keys `C[4][4]uc  1 s 16 keys ]
 "41 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\lcd_i2c.c
 [v __backlight_state _backlight_state `uc  1 s 1 _backlight_state ]
-"33 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
+"31 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
 [v _INT0_InterruptHandler INT0_InterruptHandler `*.37(v  1 e 2 0 ]
-"34
+"32
 [v _INT1_InterruptHandler INT1_InterruptHandler `*.37(v  1 e 2 0 ]
-"35
+"33
 [v _INT2_InterruptHandler INT2_InterruptHandler `*.37(v  1 e 2 0 ]
+"54 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/pin_manager.c
+[v _IOCB4_InterruptHandler IOCB4_InterruptHandler `*.37(v  1 e 2 0 ]
+"55
+[v _IOCB5_InterruptHandler IOCB5_InterruptHandler `*.37(v  1 e 2 0 ]
+"56
+[v _IOCB6_InterruptHandler IOCB6_InterruptHandler `*.37(v  1 e 2 0 ]
+"57
+[v _IOCB7_InterruptHandler IOCB7_InterruptHandler `*.37(v  1 e 2 0 ]
 "59 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"126
+"117
 } 0
-"51 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\Alarm_Status.c
+"71 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\Alarm_Status.c
 [v _show_pin_screen show_pin_screen `(v  1 e 1 0 ]
 {
-"104
+"130
 } 0
-"109
+"190
+[v _mostrar_zona_alarma mostrar_zona_alarma `(v  1 e 1 0 ]
+{
+"207
+} 0
+"135
 [v _armed_alarm armed_alarm `(v  1 e 1 0 ]
 {
-"113
+"139
 } 0
-"118
+"144
 [v _alert_alarm alert_alarm `(v  1 e 1 0 ]
 {
-"162
+"188
 } 0
 "3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\strcmp.c
 [v _strcmp strcmp `(i  1 e 2 0 ]
 {
-[v strcmp@l l `*.30Cuc  1 p 1 3 ]
-[v strcmp@r r `*.31Cuc  1 p 1 4 ]
+[v strcmp@l l `*.30Cuc  1 p 1 0 ]
+[v strcmp@r r `*.31Cuc  1 p 1 1 ]
 "7
 } 0
 "25 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\Alarm_Status.c
 [v _alarm_disarmed alarm_disarmed `(v  1 e 1 0 ]
 {
-"46
+"39
+[v alarm_disarmed@buffer_temp buffer_temp `[16]uc  1 a 16 45 ]
+"36
+[v alarm_disarmed@temperatura temperatura `us  1 a 2 63 ]
+"30
+[v alarm_disarmed@valor_adc valor_adc `us  1 a 2 61 ]
+"66
+} 0
+"9 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_sprintf.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[u S1923 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+"13
+[s S1926 _IO_FILE 11 `S1923 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v sprintf@f f `S1926  1 a 11 30 ]
+"12
+[v sprintf@ap ap `[1]*.30v  1 a 1 29 ]
+"9
+[v sprintf@s s `*.30uc  1 p 1 25 ]
+[v sprintf@fmt fmt `*.31Cuc  1 p 1 26 ]
+"23
+} 0
+"1817 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\doprnt.c
+[v _vfprintf vfprintf `(i  1 e 2 0 ]
+{
+"1820
+[v vfprintf@cfmt cfmt `*.31uc  1 a 1 24 ]
+[s S1958 _IO_FILE 0 ]
+"1817
+[v vfprintf@fp fp `*.30S1958  1 p 1 21 ]
+[v vfprintf@fmt fmt `*.31Cuc  1 p 1 22 ]
+[v vfprintf@ap ap `*.30*.30v  1 p 1 23 ]
+"1840
+} 0
+"1177
+[v _vfpfcnvrt vfpfcnvrt `(v  1 s 1 vfpfcnvrt ]
+{
+[u S1971 . 4 `i 1 sint 2 0 `ui 1 uint 2 0 `d 1 f 4 0 ]
+"1188
+[v vfpfcnvrt@convarg convarg `S1971  1 a 4 16 ]
+"1179
+[v vfpfcnvrt@c c `uc  1 a 1 20 ]
+[v vfpfcnvrt@cp cp `*.31uc  1 a 1 15 ]
+"1180
+[v vfpfcnvrt@done done `a  1 a 1 14 ]
+[s S1958 _IO_FILE 0 ]
+"1177
+[v vfpfcnvrt@fp fp `*.30S1958  1 p 1 10 ]
+[v vfpfcnvrt@fmt fmt `*.30*.31uc  1 p 1 11 ]
+[v vfpfcnvrt@ap ap `*.30*.30v  1 p 1 12 ]
+"1814
+} 0
+"8 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\nf_fputc.c
+[v _fputc fputc `(i  1 e 2 0 ]
+{
+[v fputc@c c `i  1 p 2 0 ]
+[u S1923 . 2 `*.30uc 1 buffer 1 0 `*.39Cuc 1 source 2 0 ]
+[s S1926 _IO_FILE 11 `S1923 1 . 2 0 `i 1 count 2 2 `[3]uc 1 ungetbuf 3 4 `i 1 ungetcnt 2 7 `i 1 limit 2 9 ]
+[v fputc@fp fp `*.30S1926  1 p 1 2 ]
+"24
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\putch.c
+[v _putch putch `(v  1 e 1 0 ]
+{
+"9
+} 0
+"1 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\abs.c
+[v _abs abs `(i  1 e 2 0 ]
+{
+[v abs@a a `i  1 p 2 6 ]
+"4
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awmod.c
+[v ___awmod __awmod `(i  1 e 2 0 ]
+{
+"10
+[v ___awmod@sign sign `uc  1 a 1 5 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
+"34
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 5 ]
+[v ___awdiv@counter counter `uc  1 a 1 4 ]
+"7
+[v ___awdiv@dividend dividend `i  1 p 2 0 ]
+[v ___awdiv@divisor divisor `i  1 p 2 2 ]
+"41
 } 0
 "3 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\memset.c
 [v _memset memset `(*.30v  1 e 2 0 ]
 {
 "5
-[v memset@p p `*.30uc  1 a 1 8 ]
+[v memset@p p `*.30uc  1 a 1 5 ]
 "3
-[v memset@dest dest `*.30v  1 p 1 3 ]
-[v memset@c c `i  1 p 2 4 ]
-[v memset@n n `ui  1 p 2 6 ]
+[v memset@dest dest `*.30v  1 p 1 0 ]
+[v memset@c c `i  1 p 2 1 ]
+[v memset@n n `ui  1 p 2 3 ]
 "10
+} 0
+"7 C:\Program Files\Microchip\xc8\v3.00\pic\sources\c99\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 4 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 6 ]
+"7
+[v ___lwdiv@dividend dividend `ui  1 p 2 0 ]
+[v ___lwdiv@divisor divisor `ui  1 p 2 2 ]
+"30
 } 0
 "171 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\lcd_i2c.c
 [v _LCD_SetCursor LCD_SetCursor `(v  1 e 1 0 ]
 {
 [v LCD_SetCursor@row row `uc  1 p 1 wreg ]
 [v LCD_SetCursor@row row `uc  1 p 1 wreg ]
-[v LCD_SetCursor@col col `uc  1 p 1 15 ]
+[v LCD_SetCursor@col col `uc  1 p 1 12 ]
 "172
 [v LCD_SetCursor@row_offsets row_offsets `C[4]uc  1 s 4 row_offsets ]
-[v LCD_SetCursor@row row `uc  1 p 1 17 ]
+[v LCD_SetCursor@row row `uc  1 p 1 14 ]
 "176
 } 0
 "182
 [v _LCD_SendString LCD_SendString `(v  1 e 1 0 ]
 {
-[v LCD_SendString@str str `*.31uc  1 p 1 16 ]
+[v LCD_SendString@str str `*.34uc  1 p 2 13 ]
 "186
 } 0
 "178
@@ -591,7 +838,7 @@ INTRUSION 3
 {
 [v LCD_SendChar@c c `uc  1 p 1 wreg ]
 [v LCD_SendChar@c c `uc  1 p 1 wreg ]
-[v LCD_SendChar@c c `uc  1 p 1 15 ]
+[v LCD_SendChar@c c `uc  1 p 1 12 ]
 "180
 } 0
 "166
@@ -604,15 +851,48 @@ INTRUSION 3
 {
 "59
 } 0
+"110 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/adc.c
+[v _ADC_GetConversion ADC_GetConversion `(us  1 e 2 0 ]
+{
+[v ADC_GetConversion@channel channel `E6023  1 p 1 wreg ]
+[v ADC_GetConversion@channel channel `E6023  1 p 1 wreg ]
+"113
+[v ADC_GetConversion@channel channel `E6023  1 p 1 4 ]
+"128
+} 0
 "50 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
 "58
 } 0
-"55 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/pin_manager.c
+"60 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"97
+"120
+} 0
+"243
+[v _IOCB7_SetInterruptHandler IOCB7_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCB7_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"245
+} 0
+"214
+[v _IOCB6_SetInterruptHandler IOCB6_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCB6_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"216
+} 0
+"185
+[v _IOCB5_SetInterruptHandler IOCB5_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCB5_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"187
+} 0
+"156
+[v _IOCB4_SetInterruptHandler IOCB4_SetInterruptHandler `(v  1 e 1 0 ]
+{
+[v IOCB4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"158
 } 0
 "60 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
@@ -624,28 +904,28 @@ INTRUSION 3
 {
 "56
 } 0
-"110 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
+"114 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
 {
-"139
+"143
 } 0
-"101
+"105
 [v _INT2_SetInterruptHandler INT2_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
-"103
+[v INT2_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"107
 } 0
-"75
+"79
 [v _INT1_SetInterruptHandler INT1_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
-"77
+[v INT1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"81
 } 0
-"52
+"53
 [v _INT0_SetInterruptHandler INT0_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 3 ]
-"54
+[v INT0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
+"55
 } 0
 "62 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -662,9 +942,9 @@ INTRUSION 3
 {
 [v LCD_SendByte@byte byte `uc  1 p 1 wreg ]
 [v LCD_SendByte@byte byte `uc  1 p 1 wreg ]
-[v LCD_SendByte@isData isData `uc  1 p 1 13 ]
+[v LCD_SendByte@isData isData `uc  1 p 1 10 ]
 "140
-[v LCD_SendByte@byte byte `uc  1 p 1 14 ]
+[v LCD_SendByte@byte byte `uc  1 p 1 11 ]
 "143
 } 0
 "121
@@ -672,12 +952,12 @@ INTRUSION 3
 {
 [v LCD_SendNibble@nibble nibble `uc  1 p 1 wreg ]
 "122
-[v LCD_SendNibble@byte_to_send byte_to_send `uc  1 a 1 12 ]
+[v LCD_SendNibble@byte_to_send byte_to_send `uc  1 a 1 9 ]
 "121
 [v LCD_SendNibble@nibble nibble `uc  1 p 1 wreg ]
-[v LCD_SendNibble@isData isData `uc  1 p 1 9 ]
+[v LCD_SendNibble@isData isData `uc  1 p 1 6 ]
 "124
-[v LCD_SendNibble@nibble nibble `uc  1 p 1 11 ]
+[v LCD_SendNibble@nibble nibble `uc  1 p 1 8 ]
 "133
 } 0
 "109
@@ -685,7 +965,7 @@ INTRUSION 3
 {
 [v LCD_SendByteI2C@byte byte `uc  1 p 1 wreg ]
 [v LCD_SendByteI2C@byte byte `uc  1 p 1 wreg ]
-[v LCD_SendByteI2C@byte byte `uc  1 p 1 8 ]
+[v LCD_SendByteI2C@byte byte `uc  1 p 1 5 ]
 "116
 } 0
 "77
@@ -693,11 +973,11 @@ INTRUSION 3
 {
 [v I2C_Write@byte byte `uc  1 p 1 wreg ]
 "78
-[v I2C_Write@i i `uc  1 a 1 7 ]
+[v I2C_Write@i i `uc  1 a 1 4 ]
 "77
 [v I2C_Write@byte byte `uc  1 p 1 wreg ]
 "79
-[v I2C_Write@byte byte `uc  1 p 1 6 ]
+[v I2C_Write@byte byte `uc  1 p 1 3 ]
 "102
 } 0
 "62
@@ -710,43 +990,8 @@ INTRUSION 3
 {
 "57
 } 0
-"58 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/interrupt_manager.c
+"61 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `IIH(v  1 e 1 0 ]
 {
-"77
-} 0
-"83 C:\Users\josem\OneDrive\Documentos\Cuvalles\2025B\Programacion Tiempo Real\PIC18F46K22\MPLAB_PROJECTS\ProyectoTR\Alarm_System.X\mcc_generated_files/ext_int.c
-[v _INT2_ISR INT2_ISR `(v  1 e 1 0 ]
-{
-"89
-} 0
-"92
-[v _INT2_CallBack INT2_CallBack `(v  1 e 1 0 ]
-{
-"99
-} 0
-"105
-[v _INT2_DefaultInterruptHandler INT2_DefaultInterruptHandler `(v  1 e 1 0 ]
-{
-"108
-} 0
-"60
-[v _INT1_ISR INT1_ISR `(v  1 e 1 0 ]
-{
-"66
-} 0
-"69
-[v _INT1_CallBack INT1_CallBack `(v  1 e 1 0 ]
-{
-"73
-} 0
-"37
-[v _INT0_ISR INT0_ISR `(v  1 e 1 0 ]
-{
-"43
-} 0
-"46
-[v _INT0_CallBack INT0_CallBack `(v  1 e 1 0 ]
-{
-"50
+"95
 } 0
